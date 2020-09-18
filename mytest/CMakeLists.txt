@@ -3,6 +3,7 @@ cmake_minimum_required(VERSION 2.8.0)
 project("Protobuf Test" C CXX)
 
 option(BUILD_1_FIRST_TEST "Build 1-first program" ON)
+option(BUILD_2_SECOND_TEST "Build 2-second program" ON)
 
 #
 # if u wanna release, do like this `cmake -DCMAKE_BUILD_TYPE=Release`
@@ -39,6 +40,10 @@ link_directories(${protobuf_LIBRARY_PATH})
 #
 if(BUILD_1_FIRST_TEST)
     add_subdirectory(1-first)
+endif()
+
+if(BUILD_2_SECOND_TEST)
+    add_subdirectory(2-second)
 endif()
 
 #

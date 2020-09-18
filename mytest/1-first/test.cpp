@@ -1,6 +1,5 @@
 
 #include <fstream>
-#include <google/protobuf/util/time_util.h>
 #include <cstdio>
 #include <cassert>
 #include <string>
@@ -17,7 +16,6 @@ int main(int argc, char* argv[])
     
     std::string strAddressBook;
     {
-        /** ---------- 序列化 ---------- */
         printf("========== 开始序列化测试 ==========\n");
         tutorial::AddressBook address_book;
         tutorial::Person * person;
@@ -60,7 +58,7 @@ int main(int argc, char* argv[])
         
         printf("stream size=%lu\n", strAddressBook.size());
     }   // end namespace
-    /** ---------- 结构化 ---------- */
+
     {
         printf("========== 开始结构化测试 ==========\n");
         tutorial::AddressBook address_book;
