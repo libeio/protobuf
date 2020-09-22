@@ -2,8 +2,9 @@ cmake_minimum_required(VERSION 2.8.0)
 
 project("Protobuf Test" C CXX)
 
-option(BUILD_1_FIRST_TEST "Build 1-first program" ON)
-option(BUILD_2_SECOND_TEST "Build 2-second program" ON)
+option(BUILD_1_FIRST_TEST   "Build 1-first program" ON)
+option(BUILD_2_SECOND_TEST  "Build 2-second program" ON)
+option(BUILD_3_THIRD_TEST   "Build 3-third program" ON)
 
 #
 # if u wanna release, do like this `cmake -DCMAKE_BUILD_TYPE=Release`
@@ -44,6 +45,10 @@ endif()
 
 if(BUILD_2_SECOND_TEST)
     add_subdirectory(2-second)
+endif()
+
+if(BUILD_3_THIRD_TEST)
+    add_subdirectory(3-third)
 endif()
 
 #
