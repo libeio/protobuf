@@ -20,18 +20,19 @@
 ## 利用 protoc 命令创建 .cpp 文件
 - 安装完成后，在 `/usr/local/protobuf/bin` 下会有产生一个可执行命令 `protoc`。将该命令添加软链接到系统执行路径:
   ```shell
-	ln -s /usr/local/protobuf/bin/protoc /usr/bin/protoc
+    ln -s /usr/local/protobuf/bin/protoc /usr/bin/protoc
   ```
 - 创建关于 `.proto` 文件的 `.h` 和 `.cc` 文件
   ```shell
-	protoc --cpp_out=. addressbook.proto
+    protoc --cpp_out=. addressbook.proto
   ```
   如果 `addressbook.proto` 内部还依赖其他文件，可以通过 `-I` 或 `--proto_path` 指定依赖文件所在的最深层目录。
 
-## protobuf 基本用法
-- [protobuf最基本示例](Usage.md)
-
 ## 测试目录说明
+- 1-first: 基本使用
+- 2-second: 基本使用
+- 3-third: mutable_xxx 使用
+- 4-forth: 通过迭代器访问 repeated 结构
 
 
 
