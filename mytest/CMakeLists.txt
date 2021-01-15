@@ -6,6 +6,7 @@ option(BUILD_1_FIRST_TEST   "Build 1-first program"    ON)
 option(BUILD_2_SECOND_TEST  "Build 2-second program"   ON)
 option(BUILD_3_THIRD_TEST   "Build 3-third program"    ON)
 option(BUILD_4_FORTH_TEST   "Build 4-forth program"    ON)
+option(BUILD_5_FIFTH_TEST   "Build 5-fifth program"    ON)
 
 #
 # if u wanna release, do like this `cmake -DCMAKE_BUILD_TYPE=Release`
@@ -54,6 +55,11 @@ endif()
 
 if(BUILD_4_FORTH_TEST)
 	add_subdirectory(4-forth)
+endif()
+
+
+if(BUILD_5_FIFTH_TEST)
+	add_subdirectory(5-fifth)
 endif()
 
 #
