@@ -19,7 +19,7 @@ message Digimon
     bool x_bl = 7;
     string x_str = 8;
     bytes x_bs = 9;
-    map<string, string> x_map = 10;
+    map<string, double> x_map = 10;
     ShouldType x_enum = 11;
     SubType st = 12;
     repeated SubType rst = 13;

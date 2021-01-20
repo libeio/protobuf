@@ -105,15 +105,15 @@ inline bool ShouldType_Parse(
 // ===================================================================
 
 class Digimon_XMapEntry_DoNotUse : public ::PROTOBUF_NAMESPACE_ID::internal::MapEntry<Digimon_XMapEntry_DoNotUse, 
-    std::string, std::string,
+    std::string, double,
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_DOUBLE,
     0 > {
 public:
   typedef ::PROTOBUF_NAMESPACE_ID::internal::MapEntry<Digimon_XMapEntry_DoNotUse, 
-    std::string, std::string,
+    std::string, double,
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_DOUBLE,
     0 > SuperType;
   Digimon_XMapEntry_DoNotUse();
   explicit Digimon_XMapEntry_DoNotUse(::PROTOBUF_NAMESPACE_ID::Arena* arena);
@@ -122,9 +122,7 @@ public:
   static bool ValidateKey(std::string* s) {
     return ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(s->data(), static_cast<int>(s->size()), ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::PARSE, "mam.Digimon.XMapEntry.key");
  }
-  static bool ValidateValue(std::string* s) {
-    return ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(s->data(), static_cast<int>(s->size()), ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::PARSE, "mam.Digimon.XMapEntry.value");
- }
+  static bool ValidateValue(void*) { return true; }
   void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& other) final;
   ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
   private:
@@ -266,40 +264,44 @@ class Digimon PROTOBUF_FINAL :
     kXBlFieldNumber = 7,
     kXEnumFieldNumber = 11,
   };
-  // map<string, string> x_map = 10;
+  // map<string, double> x_map = 10;
   int x_map_size() const;
   private:
   int _internal_x_map_size() const;
   public:
   void clear_x_map();
   private:
-  const ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >&
+  const ::PROTOBUF_NAMESPACE_ID::Map< std::string, double >&
       _internal_x_map() const;
-  ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >*
+  ::PROTOBUF_NAMESPACE_ID::Map< std::string, double >*
       _internal_mutable_x_map();
   public:
-  const ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >&
+  const ::PROTOBUF_NAMESPACE_ID::Map< std::string, double >&
       x_map() const;
-  ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >*
+  ::PROTOBUF_NAMESPACE_ID::Map< std::string, double >*
       mutable_x_map();
 
-  // repeated .mam.SubType rst = 13;
+  // repeated int32 rst = 13;
   int rst_size() const;
   private:
   int _internal_rst_size() const;
   public:
   void clear_rst();
-  ::mam::SubType* mutable_rst(int index);
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mam::SubType >*
-      mutable_rst();
   private:
-  const ::mam::SubType& _internal_rst(int index) const;
-  ::mam::SubType* _internal_add_rst();
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_rst(int index) const;
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< ::PROTOBUF_NAMESPACE_ID::int32 >&
+      _internal_rst() const;
+  void _internal_add_rst(::PROTOBUF_NAMESPACE_ID::int32 value);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField< ::PROTOBUF_NAMESPACE_ID::int32 >*
+      _internal_mutable_rst();
   public:
-  const ::mam::SubType& rst(int index) const;
-  ::mam::SubType* add_rst();
-  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mam::SubType >&
+  ::PROTOBUF_NAMESPACE_ID::int32 rst(int index) const;
+  void set_rst(int index, ::PROTOBUF_NAMESPACE_ID::int32 value);
+  void add_rst(::PROTOBUF_NAMESPACE_ID::int32 value);
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< ::PROTOBUF_NAMESPACE_ID::int32 >&
       rst() const;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField< ::PROTOBUF_NAMESPACE_ID::int32 >*
+      mutable_rst();
 
   // string x_str = 8;
   void clear_x_str();
@@ -432,11 +434,12 @@ class Digimon PROTOBUF_FINAL :
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::MapField<
       Digimon_XMapEntry_DoNotUse,
-      std::string, std::string,
+      std::string, double,
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_DOUBLE,
       0 > x_map_;
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mam::SubType > rst_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField< ::PROTOBUF_NAMESPACE_ID::int32 > rst_;
+  mutable std::atomic<int> _rst_cached_byte_size_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr x_str_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr x_bs_;
   ::mam::SubType* st_;
@@ -865,7 +868,7 @@ inline void Digimon::set_allocated_x_bs(std::string* x_bs) {
   // @@protoc_insertion_point(field_set_allocated:mam.Digimon.x_bs)
 }
 
-// map<string, string> x_map = 10;
+// map<string, double> x_map = 10;
 inline int Digimon::_internal_x_map_size() const {
   return x_map_.size();
 }
@@ -875,20 +878,20 @@ inline int Digimon::x_map_size() const {
 inline void Digimon::clear_x_map() {
   x_map_.Clear();
 }
-inline const ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >&
+inline const ::PROTOBUF_NAMESPACE_ID::Map< std::string, double >&
 Digimon::_internal_x_map() const {
   return x_map_.GetMap();
 }
-inline const ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >&
+inline const ::PROTOBUF_NAMESPACE_ID::Map< std::string, double >&
 Digimon::x_map() const {
   // @@protoc_insertion_point(field_map:mam.Digimon.x_map)
   return _internal_x_map();
 }
-inline ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >*
+inline ::PROTOBUF_NAMESPACE_ID::Map< std::string, double >*
 Digimon::_internal_mutable_x_map() {
   return x_map_.MutableMap();
 }
-inline ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >*
+inline ::PROTOBUF_NAMESPACE_ID::Map< std::string, double >*
 Digimon::mutable_x_map() {
   // @@protoc_insertion_point(field_mutable_map:mam.Digimon.x_map)
   return _internal_mutable_x_map();
@@ -997,7 +1000,7 @@ inline void Digimon::set_allocated_st(::mam::SubType* st) {
   // @@protoc_insertion_point(field_set_allocated:mam.Digimon.st)
 }
 
-// repeated .mam.SubType rst = 13;
+// repeated int32 rst = 13;
 inline int Digimon::_internal_rst_size() const {
   return rst_.size();
 }
@@ -1007,33 +1010,41 @@ inline int Digimon::rst_size() const {
 inline void Digimon::clear_rst() {
   rst_.Clear();
 }
-inline ::mam::SubType* Digimon::mutable_rst(int index) {
-  // @@protoc_insertion_point(field_mutable:mam.Digimon.rst)
-  return rst_.Mutable(index);
-}
-inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mam::SubType >*
-Digimon::mutable_rst() {
-  // @@protoc_insertion_point(field_mutable_list:mam.Digimon.rst)
-  return &rst_;
-}
-inline const ::mam::SubType& Digimon::_internal_rst(int index) const {
+inline ::PROTOBUF_NAMESPACE_ID::int32 Digimon::_internal_rst(int index) const {
   return rst_.Get(index);
 }
-inline const ::mam::SubType& Digimon::rst(int index) const {
+inline ::PROTOBUF_NAMESPACE_ID::int32 Digimon::rst(int index) const {
   // @@protoc_insertion_point(field_get:mam.Digimon.rst)
   return _internal_rst(index);
 }
-inline ::mam::SubType* Digimon::_internal_add_rst() {
-  return rst_.Add();
+inline void Digimon::set_rst(int index, ::PROTOBUF_NAMESPACE_ID::int32 value) {
+  rst_.Set(index, value);
+  // @@protoc_insertion_point(field_set:mam.Digimon.rst)
 }
-inline ::mam::SubType* Digimon::add_rst() {
+inline void Digimon::_internal_add_rst(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  rst_.Add(value);
+}
+inline void Digimon::add_rst(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_add_rst(value);
   // @@protoc_insertion_point(field_add:mam.Digimon.rst)
-  return _internal_add_rst();
 }
-inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mam::SubType >&
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< ::PROTOBUF_NAMESPACE_ID::int32 >&
+Digimon::_internal_rst() const {
+  return rst_;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< ::PROTOBUF_NAMESPACE_ID::int32 >&
 Digimon::rst() const {
   // @@protoc_insertion_point(field_list:mam.Digimon.rst)
-  return rst_;
+  return _internal_rst();
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< ::PROTOBUF_NAMESPACE_ID::int32 >*
+Digimon::_internal_mutable_rst() {
+  return &rst_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< ::PROTOBUF_NAMESPACE_ID::int32 >*
+Digimon::mutable_rst() {
+  // @@protoc_insertion_point(field_mutable_list:mam.Digimon.rst)
+  return _internal_mutable_rst();
 }
 
 // -------------------------------------------------------------------

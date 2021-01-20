@@ -6,8 +6,17 @@
 #include <string>
 #include <algorithm>
 #include <type_traits>
+#include <vector>
 
 #include "seventh.pb.h"
+
+// inline const google::Protobuf::FieldDescriptor * MapReflectionTester::F(const std::string & name)
+// {
+//     const google::protobuf::FieldDescriptor* result = nullptr;
+//     result = base_descriptor_->FindFieldByName(name);
+//     GOOGLE_CHECK(result != nullptr);
+//     return result;
+// }
 
 void opaque_print_values(const google::protobuf::Message& msg)
 {
@@ -84,9 +93,10 @@ void opaque_print_values(const google::protobuf::Message& msg)
                 printf("%d typeid:%-2d typename:%-8s\n", __LINE__, f->type(), f->name().c_str());
 
                 if (f->is_map() && f->is_repeated()) {  // map
-                    // not support
+                    //
                 } else if (f->is_repeated()) {
-                    const google::protobuf::Message& submsg = ref->GetRepeatedMessage(msg, f, );
+                    // const google::protobuf::Message& submsg = ref->GetRepeatedMessage(msg, f, );
+
                 } else if (f->is_optional()) {
                     const google::protobuf::Message& submsg = ref->GetMessage(msg, f);
                     opaque_print_values(submsg);
@@ -175,6 +185,20 @@ void opaque_print_values(const google::protobuf::Message& msg)
     return ;
 }
 
+void ListFields(google::protobuf::Message* message)
+{
+    const google::protobuf::Reflection* reflection = message->GetReflection();
+
+    std::vector<const google::protobuf::FieldDescriptor*> output;
+    reflection->ListFields(*message, &output);
+    for (size_t i = 0; i < output.size(); ++i) {
+        const google::protobuf::FieldDescriptor* field = output[i];
+        printf("------> %s\n", field->name().c_str());
+        // if (!field->is_repeated()) continue;
+        // reflection->RemoveLast(message, field);
+    }
+}
+
 int main(int argc, char* argv[])
 {
     (void) argc;
@@ -193,13 +217,16 @@ int main(int argc, char* argv[])
     msg.set_x_enum(mam::ShouldType::TimeType);
     msg.set_x_bs(std::string{ '\x01', '\x00', '\x25', '\xaf', '\x34' });
 
-    (*msg.mutable_x_map())["firstname"] = "Jim";
-    (*msg.mutable_x_map())["lastname"] = "Green";
+    (*msg.mutable_x_map())["Pi"] = 3.14159;
+    (*msg.mutable_x_map())["Golden"] = 0.618;
 
     msg.mutable_st()->set_y_i32(128);
     msg.mutable_st()->set_y_i32(256);
 
     opaque_print_values(msg);
+
+    printf("==========================================\n");
+    ListFields(&msg);
 
     return 0;
 }

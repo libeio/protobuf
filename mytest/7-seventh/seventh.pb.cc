@@ -125,17 +125,17 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 };
 
 const char descriptor_table_protodef_seventh_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
-  "\n\rseventh.proto\022\003mam\"\266\002\n\007Digimon\022\013\n\003x_d\030"
+  "\n\rseventh.proto\022\003mam\"\250\002\n\007Digimon\022\013\n\003x_d\030"
   "\001 \001(\001\022\013\n\003x_f\030\002 \001(\002\022\r\n\005x_i64\030\003 \001(\003\022\016\n\006x_u"
   "i64\030\004 \001(\004\022\r\n\005x_i32\030\005 \001(\005\022\016\n\006x_ui32\030\006 \001(\r"
   "\022\014\n\004x_bl\030\007 \001(\010\022\r\n\005x_str\030\010 \001(\t\022\014\n\004x_bs\030\t "
   "\001(\014\022%\n\005x_map\030\n \003(\0132\026.mam.Digimon.XMapEnt"
   "ry\022\037\n\006x_enum\030\013 \001(\0162\017.mam.ShouldType\022\030\n\002s"
-  "t\030\014 \001(\0132\014.mam.SubType\022\031\n\003rst\030\r \003(\0132\014.mam"
-  ".SubType\032+\n\tXMapEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005va"
-  "lue\030\002 \001(\t:\0028\001\"\030\n\007SubType\022\r\n\005y_i32\030\001 \001(\005*"
-  "6\n\nShouldType\022\014\n\010NoneType\020\000\022\014\n\010NameType\020"
-  "\001\022\014\n\010TimeType\020\005b\006proto3"
+  "t\030\014 \001(\0132\014.mam.SubType\022\013\n\003rst\030\r \003(\005\032+\n\tXM"
+  "apEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\001:\0028\001\""
+  "\030\n\007SubType\022\r\n\005y_i32\030\001 \001(\005*6\n\nShouldType\022"
+  "\014\n\010NoneType\020\000\022\014\n\010NameType\020\001\022\014\n\010TimeType\020"
+  "\005b\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_seventh_2eproto_deps[1] = {
 };
@@ -146,7 +146,7 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_sev
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_seventh_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_seventh_2eproto = {
-  false, false, descriptor_table_protodef_seventh_2eproto, "seventh.proto", 423,
+  false, false, descriptor_table_protodef_seventh_2eproto, "seventh.proto", 409,
   &descriptor_table_seventh_2eproto_once, descriptor_table_seventh_2eproto_sccs, descriptor_table_seventh_2eproto_deps, 3, 0,
   schemas, file_default_instances, TableStruct_seventh_2eproto::offsets,
   file_level_metadata_seventh_2eproto, 3, file_level_enum_descriptors_seventh_2eproto, file_level_service_descriptors_seventh_2eproto,
@@ -368,7 +368,7 @@ const char* Digimon::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::in
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // map<string, string> x_map = 10;
+      // map<string, double> x_map = 10;
       case 10:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 82)) {
           ptr -= 1;
@@ -395,16 +395,14 @@ const char* Digimon::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::in
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // repeated .mam.SubType rst = 13;
+      // repeated int32 rst = 13;
       case 13:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 106)) {
-          ptr -= 1;
-          do {
-            ptr += 1;
-            ptr = ctx->ParseMessage(_internal_add_rst(), ptr);
-            CHK_(ptr);
-            if (!ctx->DataAvailable(ptr)) break;
-          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<106>(ptr));
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedInt32Parser(_internal_mutable_rst(), ptr, ctx);
+          CHK_(ptr);
+        } else if (static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 104) {
+          _internal_add_rst(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr));
+          CHK_(ptr);
         } else goto handle_unusual;
         continue;
       default: {
@@ -493,9 +491,9 @@ failure:
         9, this->_internal_x_bs(), target);
   }
 
-  // map<string, string> x_map = 10;
+  // map<string, double> x_map = 10;
   if (!this->_internal_x_map().empty()) {
-    typedef ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >::const_pointer
+    typedef ::PROTOBUF_NAMESPACE_ID::Map< std::string, double >::const_pointer
         ConstPtr;
     typedef ConstPtr SortItem;
     typedef ::PROTOBUF_NAMESPACE_ID::internal::CompareByDerefFirst<SortItem> Less;
@@ -505,10 +503,6 @@ failure:
           p->first.data(), static_cast<int>(p->first.length()),
           ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
           "mam.Digimon.XMapEntry.key");
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-          p->second.data(), static_cast<int>(p->second.length()),
-          ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-          "mam.Digimon.XMapEntry.value");
       }
     };
 
@@ -516,9 +510,9 @@ failure:
         this->_internal_x_map().size() > 1) {
       ::std::unique_ptr<SortItem[]> items(
           new SortItem[this->_internal_x_map().size()]);
-      typedef ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >::size_type size_type;
+      typedef ::PROTOBUF_NAMESPACE_ID::Map< std::string, double >::size_type size_type;
       size_type n = 0;
-      for (::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >::const_iterator
+      for (::PROTOBUF_NAMESPACE_ID::Map< std::string, double >::const_iterator
           it = this->_internal_x_map().begin();
           it != this->_internal_x_map().end(); ++it, ++n) {
         items[static_cast<ptrdiff_t>(n)] = SortItem(&*it);
@@ -529,7 +523,7 @@ failure:
         Utf8Check::Check(&(*items[static_cast<ptrdiff_t>(i)]));
       }
     } else {
-      for (::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >::const_iterator
+      for (::PROTOBUF_NAMESPACE_ID::Map< std::string, double >::const_iterator
           it = this->_internal_x_map().begin();
           it != this->_internal_x_map().end(); ++it) {
         target = Digimon_XMapEntry_DoNotUse::Funcs::InternalSerialize(10, it->first, it->second, target, stream);
@@ -553,12 +547,13 @@ failure:
         12, _Internal::st(this), target, stream);
   }
 
-  // repeated .mam.SubType rst = 13;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->_internal_rst_size()); i < n; i++) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(13, this->_internal_rst(i), target, stream);
+  // repeated int32 rst = 13;
+  {
+    int byte_size = _rst_cached_byte_size_.load(std::memory_order_relaxed);
+    if (byte_size > 0) {
+      target = stream->WriteInt32Packed(
+          13, _internal_rst(), byte_size, target);
+    }
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -577,20 +572,28 @@ size_t Digimon::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // map<string, string> x_map = 10;
+  // map<string, double> x_map = 10;
   total_size += 1 *
       ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(this->_internal_x_map_size());
-  for (::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >::const_iterator
+  for (::PROTOBUF_NAMESPACE_ID::Map< std::string, double >::const_iterator
       it = this->_internal_x_map().begin();
       it != this->_internal_x_map().end(); ++it) {
     total_size += Digimon_XMapEntry_DoNotUse::Funcs::ByteSizeLong(it->first, it->second);
   }
 
-  // repeated .mam.SubType rst = 13;
-  total_size += 1UL * this->_internal_rst_size();
-  for (const auto& msg : this->rst_) {
-    total_size +=
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
+  // repeated int32 rst = 13;
+  {
+    size_t data_size = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      Int32Size(this->rst_);
+    if (data_size > 0) {
+      total_size += 1 +
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+            static_cast<::PROTOBUF_NAMESPACE_ID::int32>(data_size));
+    }
+    int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(data_size);
+    _rst_cached_byte_size_.store(cached_size,
+                                    std::memory_order_relaxed);
+    total_size += data_size;
   }
 
   // string x_str = 8;

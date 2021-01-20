@@ -7,7 +7,7 @@ option(BUILD_2_SECOND_TEST  "Build 2-second program"   OFF)
 option(BUILD_3_THIRD_TEST   "Build 3-third program"    OFF)
 option(BUILD_4_FORTH_TEST   "Build 4-forth program"    OFF)
 option(BUILD_5_FIFTH_TEST   "Build 5-fifth program"    OFF)
-option(BUILD_6_SIXTH_TEST   "Build 6-sixth program"    ON)
+option(BUILD_6_SIXTH_TEST   "Build 6-sixth program"    OFF)
 option(BUILD_7_SEVENTH_TEST "Build 7-seventh program"  ON)
 
 #
