@@ -1,0 +1,34 @@
+
+syntax = "proto3";
+package mam;
+
+enum ShouldType {
+    NoneType = 0;
+    NameType = 1;
+    TimeType = 5;
+}
+
+message Digimon
+{
+    double x_d = 1;
+    float x_f = 2;
+    int64 x_i64 = 3;
+    uint64 x_ui64 = 4;
+    int32 x_i32 = 5;
+    uint32 x_ui32 = 6;
+    bool x_bl = 7;
+    string x_str = 8;
+    bytes x_bs = 9;
+    map<string, string> x_map = 10;
+    ShouldType x_enum = 11;
+    SubType st = 12;
+    repeated SubType rst = 13;
+}
+
+message SubType {
+    int32 y_i32 = 1;
+}
+
+//    string name = 3;
+//    int32 time = 4;
+//    map <string, ShouldType> dic = 5;
