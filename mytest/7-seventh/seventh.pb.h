@@ -51,7 +51,7 @@ struct TableStruct_seventh_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[3]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[9]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -65,6 +65,24 @@ extern DigimonDefaultTypeInternal _Digimon_default_instance_;
 class Digimon_XMapEntry_DoNotUse;
 class Digimon_XMapEntry_DoNotUseDefaultTypeInternal;
 extern Digimon_XMapEntry_DoNotUseDefaultTypeInternal _Digimon_XMapEntry_DoNotUse_default_instance_;
+class IntArray;
+class IntArrayDefaultTypeInternal;
+extern IntArrayDefaultTypeInternal _IntArray_default_instance_;
+class IntMap;
+class IntMapDefaultTypeInternal;
+extern IntMapDefaultTypeInternal _IntMap_default_instance_;
+class IntMap_IntstringEntry_DoNotUse;
+class IntMap_IntstringEntry_DoNotUseDefaultTypeInternal;
+extern IntMap_IntstringEntry_DoNotUseDefaultTypeInternal _IntMap_IntstringEntry_DoNotUse_default_instance_;
+class IntObjMap;
+class IntObjMapDefaultTypeInternal;
+extern IntObjMapDefaultTypeInternal _IntObjMap_default_instance_;
+class IntObjMap_IntobjmapEntry_DoNotUse;
+class IntObjMap_IntobjmapEntry_DoNotUseDefaultTypeInternal;
+extern IntObjMap_IntobjmapEntry_DoNotUseDefaultTypeInternal _IntObjMap_IntobjmapEntry_DoNotUse_default_instance_;
+class StArray;
+class StArrayDefaultTypeInternal;
+extern StArrayDefaultTypeInternal _StArray_default_instance_;
 class SubType;
 class SubTypeDefaultTypeInternal;
 extern SubTypeDefaultTypeInternal _SubType_default_instance_;
@@ -72,6 +90,12 @@ extern SubTypeDefaultTypeInternal _SubType_default_instance_;
 PROTOBUF_NAMESPACE_OPEN
 template<> ::mam::Digimon* Arena::CreateMaybeMessage<::mam::Digimon>(Arena*);
 template<> ::mam::Digimon_XMapEntry_DoNotUse* Arena::CreateMaybeMessage<::mam::Digimon_XMapEntry_DoNotUse>(Arena*);
+template<> ::mam::IntArray* Arena::CreateMaybeMessage<::mam::IntArray>(Arena*);
+template<> ::mam::IntMap* Arena::CreateMaybeMessage<::mam::IntMap>(Arena*);
+template<> ::mam::IntMap_IntstringEntry_DoNotUse* Arena::CreateMaybeMessage<::mam::IntMap_IntstringEntry_DoNotUse>(Arena*);
+template<> ::mam::IntObjMap* Arena::CreateMaybeMessage<::mam::IntObjMap>(Arena*);
+template<> ::mam::IntObjMap_IntobjmapEntry_DoNotUse* Arena::CreateMaybeMessage<::mam::IntObjMap_IntobjmapEntry_DoNotUse>(Arena*);
+template<> ::mam::StArray* Arena::CreateMaybeMessage<::mam::StArray>(Arena*);
 template<> ::mam::SubType* Arena::CreateMaybeMessage<::mam::SubType>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
 namespace mam {
@@ -252,6 +276,7 @@ class Digimon PROTOBUF_FINAL :
   enum : int {
     kXMapFieldNumber = 10,
     kRstFieldNumber = 13,
+    kXIaFieldNumber = 14,
     kXStrFieldNumber = 8,
     kXBsFieldNumber = 9,
     kStFieldNumber = 12,
@@ -281,27 +306,45 @@ class Digimon PROTOBUF_FINAL :
   ::PROTOBUF_NAMESPACE_ID::Map< std::string, double >*
       mutable_x_map();
 
-  // repeated int32 rst = 13;
+  // repeated .mam.SubType rst = 13;
   int rst_size() const;
   private:
   int _internal_rst_size() const;
   public:
   void clear_rst();
-  private:
-  ::PROTOBUF_NAMESPACE_ID::int32 _internal_rst(int index) const;
-  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< ::PROTOBUF_NAMESPACE_ID::int32 >&
-      _internal_rst() const;
-  void _internal_add_rst(::PROTOBUF_NAMESPACE_ID::int32 value);
-  ::PROTOBUF_NAMESPACE_ID::RepeatedField< ::PROTOBUF_NAMESPACE_ID::int32 >*
-      _internal_mutable_rst();
-  public:
-  ::PROTOBUF_NAMESPACE_ID::int32 rst(int index) const;
-  void set_rst(int index, ::PROTOBUF_NAMESPACE_ID::int32 value);
-  void add_rst(::PROTOBUF_NAMESPACE_ID::int32 value);
-  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< ::PROTOBUF_NAMESPACE_ID::int32 >&
-      rst() const;
-  ::PROTOBUF_NAMESPACE_ID::RepeatedField< ::PROTOBUF_NAMESPACE_ID::int32 >*
+  ::mam::SubType* mutable_rst(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mam::SubType >*
       mutable_rst();
+  private:
+  const ::mam::SubType& _internal_rst(int index) const;
+  ::mam::SubType* _internal_add_rst();
+  public:
+  const ::mam::SubType& rst(int index) const;
+  ::mam::SubType* add_rst();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mam::SubType >&
+      rst() const;
+
+  // repeated int32 x_ia = 14;
+  int x_ia_size() const;
+  private:
+  int _internal_x_ia_size() const;
+  public:
+  void clear_x_ia();
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_x_ia(int index) const;
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< ::PROTOBUF_NAMESPACE_ID::int32 >&
+      _internal_x_ia() const;
+  void _internal_add_x_ia(::PROTOBUF_NAMESPACE_ID::int32 value);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField< ::PROTOBUF_NAMESPACE_ID::int32 >*
+      _internal_mutable_x_ia();
+  public:
+  ::PROTOBUF_NAMESPACE_ID::int32 x_ia(int index) const;
+  void set_x_ia(int index, ::PROTOBUF_NAMESPACE_ID::int32 value);
+  void add_x_ia(::PROTOBUF_NAMESPACE_ID::int32 value);
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< ::PROTOBUF_NAMESPACE_ID::int32 >&
+      x_ia() const;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField< ::PROTOBUF_NAMESPACE_ID::int32 >*
+      mutable_x_ia();
 
   // string x_str = 8;
   void clear_x_str();
@@ -438,8 +481,9 @@ class Digimon PROTOBUF_FINAL :
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_DOUBLE,
       0 > x_map_;
-  ::PROTOBUF_NAMESPACE_ID::RepeatedField< ::PROTOBUF_NAMESPACE_ID::int32 > rst_;
-  mutable std::atomic<int> _rst_cached_byte_size_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mam::SubType > rst_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField< ::PROTOBUF_NAMESPACE_ID::int32 > x_ia_;
+  mutable std::atomic<int> _x_ia_cached_byte_size_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr x_str_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr x_bs_;
   ::mam::SubType* st_;
@@ -588,6 +632,669 @@ class SubType PROTOBUF_FINAL :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::int32 y_i32_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_seventh_2eproto;
+};
+// -------------------------------------------------------------------
+
+class IntArray PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mam.IntArray) */ {
+ public:
+  inline IntArray() : IntArray(nullptr) {}
+  virtual ~IntArray();
+
+  IntArray(const IntArray& from);
+  IntArray(IntArray&& from) noexcept
+    : IntArray() {
+    *this = ::std::move(from);
+  }
+
+  inline IntArray& operator=(const IntArray& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline IntArray& operator=(IntArray&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const IntArray& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const IntArray* internal_default_instance() {
+    return reinterpret_cast<const IntArray*>(
+               &_IntArray_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    3;
+
+  friend void swap(IntArray& a, IntArray& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(IntArray* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(IntArray* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline IntArray* New() const final {
+    return CreateMaybeMessage<IntArray>(nullptr);
+  }
+
+  IntArray* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<IntArray>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const IntArray& from);
+  void MergeFrom(const IntArray& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(IntArray* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "mam.IntArray";
+  }
+  protected:
+  explicit IntArray(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_seventh_2eproto);
+    return ::descriptor_table_seventh_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kIarrayFieldNumber = 1,
+  };
+  // repeated int32 iarray = 1;
+  int iarray_size() const;
+  private:
+  int _internal_iarray_size() const;
+  public:
+  void clear_iarray();
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_iarray(int index) const;
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< ::PROTOBUF_NAMESPACE_ID::int32 >&
+      _internal_iarray() const;
+  void _internal_add_iarray(::PROTOBUF_NAMESPACE_ID::int32 value);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField< ::PROTOBUF_NAMESPACE_ID::int32 >*
+      _internal_mutable_iarray();
+  public:
+  ::PROTOBUF_NAMESPACE_ID::int32 iarray(int index) const;
+  void set_iarray(int index, ::PROTOBUF_NAMESPACE_ID::int32 value);
+  void add_iarray(::PROTOBUF_NAMESPACE_ID::int32 value);
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< ::PROTOBUF_NAMESPACE_ID::int32 >&
+      iarray() const;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField< ::PROTOBUF_NAMESPACE_ID::int32 >*
+      mutable_iarray();
+
+  // @@protoc_insertion_point(class_scope:mam.IntArray)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField< ::PROTOBUF_NAMESPACE_ID::int32 > iarray_;
+  mutable std::atomic<int> _iarray_cached_byte_size_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_seventh_2eproto;
+};
+// -------------------------------------------------------------------
+
+class StArray PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mam.StArray) */ {
+ public:
+  inline StArray() : StArray(nullptr) {}
+  virtual ~StArray();
+
+  StArray(const StArray& from);
+  StArray(StArray&& from) noexcept
+    : StArray() {
+    *this = ::std::move(from);
+  }
+
+  inline StArray& operator=(const StArray& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline StArray& operator=(StArray&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const StArray& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const StArray* internal_default_instance() {
+    return reinterpret_cast<const StArray*>(
+               &_StArray_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    4;
+
+  friend void swap(StArray& a, StArray& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(StArray* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(StArray* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline StArray* New() const final {
+    return CreateMaybeMessage<StArray>(nullptr);
+  }
+
+  StArray* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<StArray>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const StArray& from);
+  void MergeFrom(const StArray& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(StArray* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "mam.StArray";
+  }
+  protected:
+  explicit StArray(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_seventh_2eproto);
+    return ::descriptor_table_seventh_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kStsFieldNumber = 1,
+  };
+  // repeated .mam.SubType sts = 1;
+  int sts_size() const;
+  private:
+  int _internal_sts_size() const;
+  public:
+  void clear_sts();
+  ::mam::SubType* mutable_sts(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mam::SubType >*
+      mutable_sts();
+  private:
+  const ::mam::SubType& _internal_sts(int index) const;
+  ::mam::SubType* _internal_add_sts();
+  public:
+  const ::mam::SubType& sts(int index) const;
+  ::mam::SubType* add_sts();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mam::SubType >&
+      sts() const;
+
+  // @@protoc_insertion_point(class_scope:mam.StArray)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mam::SubType > sts_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_seventh_2eproto;
+};
+// -------------------------------------------------------------------
+
+class IntMap_IntstringEntry_DoNotUse : public ::PROTOBUF_NAMESPACE_ID::internal::MapEntry<IntMap_IntstringEntry_DoNotUse, 
+    ::PROTOBUF_NAMESPACE_ID::int32, std::string,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_INT32,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
+    0 > {
+public:
+  typedef ::PROTOBUF_NAMESPACE_ID::internal::MapEntry<IntMap_IntstringEntry_DoNotUse, 
+    ::PROTOBUF_NAMESPACE_ID::int32, std::string,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_INT32,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
+    0 > SuperType;
+  IntMap_IntstringEntry_DoNotUse();
+  explicit IntMap_IntstringEntry_DoNotUse(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  void MergeFrom(const IntMap_IntstringEntry_DoNotUse& other);
+  static const IntMap_IntstringEntry_DoNotUse* internal_default_instance() { return reinterpret_cast<const IntMap_IntstringEntry_DoNotUse*>(&_IntMap_IntstringEntry_DoNotUse_default_instance_); }
+  static bool ValidateKey(void*) { return true; }
+  static bool ValidateValue(std::string* s) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(s->data(), static_cast<int>(s->size()), ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::PARSE, "mam.IntMap.IntstringEntry.value");
+ }
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& other) final;
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_seventh_2eproto);
+    return ::descriptor_table_seventh_2eproto.file_level_metadata[5];
+  }
+
+  public:
+};
+
+// -------------------------------------------------------------------
+
+class IntMap PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mam.IntMap) */ {
+ public:
+  inline IntMap() : IntMap(nullptr) {}
+  virtual ~IntMap();
+
+  IntMap(const IntMap& from);
+  IntMap(IntMap&& from) noexcept
+    : IntMap() {
+    *this = ::std::move(from);
+  }
+
+  inline IntMap& operator=(const IntMap& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline IntMap& operator=(IntMap&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const IntMap& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const IntMap* internal_default_instance() {
+    return reinterpret_cast<const IntMap*>(
+               &_IntMap_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    6;
+
+  friend void swap(IntMap& a, IntMap& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(IntMap* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(IntMap* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline IntMap* New() const final {
+    return CreateMaybeMessage<IntMap>(nullptr);
+  }
+
+  IntMap* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<IntMap>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const IntMap& from);
+  void MergeFrom(const IntMap& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(IntMap* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "mam.IntMap";
+  }
+  protected:
+  explicit IntMap(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_seventh_2eproto);
+    return ::descriptor_table_seventh_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kIntstringFieldNumber = 1,
+  };
+  // map<int32, string> intstring = 1;
+  int intstring_size() const;
+  private:
+  int _internal_intstring_size() const;
+  public:
+  void clear_intstring();
+  private:
+  const ::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::int32, std::string >&
+      _internal_intstring() const;
+  ::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::int32, std::string >*
+      _internal_mutable_intstring();
+  public:
+  const ::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::int32, std::string >&
+      intstring() const;
+  ::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::int32, std::string >*
+      mutable_intstring();
+
+  // @@protoc_insertion_point(class_scope:mam.IntMap)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::MapField<
+      IntMap_IntstringEntry_DoNotUse,
+      ::PROTOBUF_NAMESPACE_ID::int32, std::string,
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_INT32,
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
+      0 > intstring_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_seventh_2eproto;
+};
+// -------------------------------------------------------------------
+
+class IntObjMap_IntobjmapEntry_DoNotUse : public ::PROTOBUF_NAMESPACE_ID::internal::MapEntry<IntObjMap_IntobjmapEntry_DoNotUse, 
+    std::string, ::mam::SubType,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_MESSAGE,
+    0 > {
+public:
+  typedef ::PROTOBUF_NAMESPACE_ID::internal::MapEntry<IntObjMap_IntobjmapEntry_DoNotUse, 
+    std::string, ::mam::SubType,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_MESSAGE,
+    0 > SuperType;
+  IntObjMap_IntobjmapEntry_DoNotUse();
+  explicit IntObjMap_IntobjmapEntry_DoNotUse(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  void MergeFrom(const IntObjMap_IntobjmapEntry_DoNotUse& other);
+  static const IntObjMap_IntobjmapEntry_DoNotUse* internal_default_instance() { return reinterpret_cast<const IntObjMap_IntobjmapEntry_DoNotUse*>(&_IntObjMap_IntobjmapEntry_DoNotUse_default_instance_); }
+  static bool ValidateKey(std::string* s) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(s->data(), static_cast<int>(s->size()), ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::PARSE, "mam.IntObjMap.IntobjmapEntry.key");
+ }
+  static bool ValidateValue(void*) { return true; }
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& other) final;
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_seventh_2eproto);
+    return ::descriptor_table_seventh_2eproto.file_level_metadata[7];
+  }
+
+  public:
+};
+
+// -------------------------------------------------------------------
+
+class IntObjMap PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mam.IntObjMap) */ {
+ public:
+  inline IntObjMap() : IntObjMap(nullptr) {}
+  virtual ~IntObjMap();
+
+  IntObjMap(const IntObjMap& from);
+  IntObjMap(IntObjMap&& from) noexcept
+    : IntObjMap() {
+    *this = ::std::move(from);
+  }
+
+  inline IntObjMap& operator=(const IntObjMap& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline IntObjMap& operator=(IntObjMap&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const IntObjMap& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const IntObjMap* internal_default_instance() {
+    return reinterpret_cast<const IntObjMap*>(
+               &_IntObjMap_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    8;
+
+  friend void swap(IntObjMap& a, IntObjMap& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(IntObjMap* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(IntObjMap* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline IntObjMap* New() const final {
+    return CreateMaybeMessage<IntObjMap>(nullptr);
+  }
+
+  IntObjMap* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<IntObjMap>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const IntObjMap& from);
+  void MergeFrom(const IntObjMap& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(IntObjMap* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "mam.IntObjMap";
+  }
+  protected:
+  explicit IntObjMap(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_seventh_2eproto);
+    return ::descriptor_table_seventh_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kIntobjmapFieldNumber = 1,
+  };
+  // map<string, .mam.SubType> intobjmap = 1;
+  int intobjmap_size() const;
+  private:
+  int _internal_intobjmap_size() const;
+  public:
+  void clear_intobjmap();
+  private:
+  const ::PROTOBUF_NAMESPACE_ID::Map< std::string, ::mam::SubType >&
+      _internal_intobjmap() const;
+  ::PROTOBUF_NAMESPACE_ID::Map< std::string, ::mam::SubType >*
+      _internal_mutable_intobjmap();
+  public:
+  const ::PROTOBUF_NAMESPACE_ID::Map< std::string, ::mam::SubType >&
+      intobjmap() const;
+  ::PROTOBUF_NAMESPACE_ID::Map< std::string, ::mam::SubType >*
+      mutable_intobjmap();
+
+  // @@protoc_insertion_point(class_scope:mam.IntObjMap)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::MapField<
+      IntObjMap_IntobjmapEntry_DoNotUse,
+      std::string, ::mam::SubType,
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_MESSAGE,
+      0 > intobjmap_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_seventh_2eproto;
 };
@@ -1000,7 +1707,7 @@ inline void Digimon::set_allocated_st(::mam::SubType* st) {
   // @@protoc_insertion_point(field_set_allocated:mam.Digimon.st)
 }
 
-// repeated int32 rst = 13;
+// repeated .mam.SubType rst = 13;
 inline int Digimon::_internal_rst_size() const {
   return rst_.size();
 }
@@ -1010,41 +1717,80 @@ inline int Digimon::rst_size() const {
 inline void Digimon::clear_rst() {
   rst_.Clear();
 }
-inline ::PROTOBUF_NAMESPACE_ID::int32 Digimon::_internal_rst(int index) const {
+inline ::mam::SubType* Digimon::mutable_rst(int index) {
+  // @@protoc_insertion_point(field_mutable:mam.Digimon.rst)
+  return rst_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mam::SubType >*
+Digimon::mutable_rst() {
+  // @@protoc_insertion_point(field_mutable_list:mam.Digimon.rst)
+  return &rst_;
+}
+inline const ::mam::SubType& Digimon::_internal_rst(int index) const {
   return rst_.Get(index);
 }
-inline ::PROTOBUF_NAMESPACE_ID::int32 Digimon::rst(int index) const {
+inline const ::mam::SubType& Digimon::rst(int index) const {
   // @@protoc_insertion_point(field_get:mam.Digimon.rst)
   return _internal_rst(index);
 }
-inline void Digimon::set_rst(int index, ::PROTOBUF_NAMESPACE_ID::int32 value) {
-  rst_.Set(index, value);
-  // @@protoc_insertion_point(field_set:mam.Digimon.rst)
+inline ::mam::SubType* Digimon::_internal_add_rst() {
+  return rst_.Add();
 }
-inline void Digimon::_internal_add_rst(::PROTOBUF_NAMESPACE_ID::int32 value) {
-  rst_.Add(value);
-}
-inline void Digimon::add_rst(::PROTOBUF_NAMESPACE_ID::int32 value) {
-  _internal_add_rst(value);
+inline ::mam::SubType* Digimon::add_rst() {
   // @@protoc_insertion_point(field_add:mam.Digimon.rst)
+  return _internal_add_rst();
 }
-inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< ::PROTOBUF_NAMESPACE_ID::int32 >&
-Digimon::_internal_rst() const {
-  return rst_;
-}
-inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< ::PROTOBUF_NAMESPACE_ID::int32 >&
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mam::SubType >&
 Digimon::rst() const {
   // @@protoc_insertion_point(field_list:mam.Digimon.rst)
-  return _internal_rst();
+  return rst_;
+}
+
+// repeated int32 x_ia = 14;
+inline int Digimon::_internal_x_ia_size() const {
+  return x_ia_.size();
+}
+inline int Digimon::x_ia_size() const {
+  return _internal_x_ia_size();
+}
+inline void Digimon::clear_x_ia() {
+  x_ia_.Clear();
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 Digimon::_internal_x_ia(int index) const {
+  return x_ia_.Get(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 Digimon::x_ia(int index) const {
+  // @@protoc_insertion_point(field_get:mam.Digimon.x_ia)
+  return _internal_x_ia(index);
+}
+inline void Digimon::set_x_ia(int index, ::PROTOBUF_NAMESPACE_ID::int32 value) {
+  x_ia_.Set(index, value);
+  // @@protoc_insertion_point(field_set:mam.Digimon.x_ia)
+}
+inline void Digimon::_internal_add_x_ia(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  x_ia_.Add(value);
+}
+inline void Digimon::add_x_ia(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_add_x_ia(value);
+  // @@protoc_insertion_point(field_add:mam.Digimon.x_ia)
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< ::PROTOBUF_NAMESPACE_ID::int32 >&
+Digimon::_internal_x_ia() const {
+  return x_ia_;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< ::PROTOBUF_NAMESPACE_ID::int32 >&
+Digimon::x_ia() const {
+  // @@protoc_insertion_point(field_list:mam.Digimon.x_ia)
+  return _internal_x_ia();
 }
 inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< ::PROTOBUF_NAMESPACE_ID::int32 >*
-Digimon::_internal_mutable_rst() {
-  return &rst_;
+Digimon::_internal_mutable_x_ia() {
+  return &x_ia_;
 }
 inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< ::PROTOBUF_NAMESPACE_ID::int32 >*
-Digimon::mutable_rst() {
-  // @@protoc_insertion_point(field_mutable_list:mam.Digimon.rst)
-  return _internal_mutable_rst();
+Digimon::mutable_x_ia() {
+  // @@protoc_insertion_point(field_mutable_list:mam.Digimon.x_ia)
+  return _internal_mutable_x_ia();
 }
 
 // -------------------------------------------------------------------
@@ -1071,9 +1817,185 @@ inline void SubType::set_y_i32(::PROTOBUF_NAMESPACE_ID::int32 value) {
   // @@protoc_insertion_point(field_set:mam.SubType.y_i32)
 }
 
+// -------------------------------------------------------------------
+
+// IntArray
+
+// repeated int32 iarray = 1;
+inline int IntArray::_internal_iarray_size() const {
+  return iarray_.size();
+}
+inline int IntArray::iarray_size() const {
+  return _internal_iarray_size();
+}
+inline void IntArray::clear_iarray() {
+  iarray_.Clear();
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 IntArray::_internal_iarray(int index) const {
+  return iarray_.Get(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 IntArray::iarray(int index) const {
+  // @@protoc_insertion_point(field_get:mam.IntArray.iarray)
+  return _internal_iarray(index);
+}
+inline void IntArray::set_iarray(int index, ::PROTOBUF_NAMESPACE_ID::int32 value) {
+  iarray_.Set(index, value);
+  // @@protoc_insertion_point(field_set:mam.IntArray.iarray)
+}
+inline void IntArray::_internal_add_iarray(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  iarray_.Add(value);
+}
+inline void IntArray::add_iarray(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_add_iarray(value);
+  // @@protoc_insertion_point(field_add:mam.IntArray.iarray)
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< ::PROTOBUF_NAMESPACE_ID::int32 >&
+IntArray::_internal_iarray() const {
+  return iarray_;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< ::PROTOBUF_NAMESPACE_ID::int32 >&
+IntArray::iarray() const {
+  // @@protoc_insertion_point(field_list:mam.IntArray.iarray)
+  return _internal_iarray();
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< ::PROTOBUF_NAMESPACE_ID::int32 >*
+IntArray::_internal_mutable_iarray() {
+  return &iarray_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< ::PROTOBUF_NAMESPACE_ID::int32 >*
+IntArray::mutable_iarray() {
+  // @@protoc_insertion_point(field_mutable_list:mam.IntArray.iarray)
+  return _internal_mutable_iarray();
+}
+
+// -------------------------------------------------------------------
+
+// StArray
+
+// repeated .mam.SubType sts = 1;
+inline int StArray::_internal_sts_size() const {
+  return sts_.size();
+}
+inline int StArray::sts_size() const {
+  return _internal_sts_size();
+}
+inline void StArray::clear_sts() {
+  sts_.Clear();
+}
+inline ::mam::SubType* StArray::mutable_sts(int index) {
+  // @@protoc_insertion_point(field_mutable:mam.StArray.sts)
+  return sts_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mam::SubType >*
+StArray::mutable_sts() {
+  // @@protoc_insertion_point(field_mutable_list:mam.StArray.sts)
+  return &sts_;
+}
+inline const ::mam::SubType& StArray::_internal_sts(int index) const {
+  return sts_.Get(index);
+}
+inline const ::mam::SubType& StArray::sts(int index) const {
+  // @@protoc_insertion_point(field_get:mam.StArray.sts)
+  return _internal_sts(index);
+}
+inline ::mam::SubType* StArray::_internal_add_sts() {
+  return sts_.Add();
+}
+inline ::mam::SubType* StArray::add_sts() {
+  // @@protoc_insertion_point(field_add:mam.StArray.sts)
+  return _internal_add_sts();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mam::SubType >&
+StArray::sts() const {
+  // @@protoc_insertion_point(field_list:mam.StArray.sts)
+  return sts_;
+}
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// IntMap
+
+// map<int32, string> intstring = 1;
+inline int IntMap::_internal_intstring_size() const {
+  return intstring_.size();
+}
+inline int IntMap::intstring_size() const {
+  return _internal_intstring_size();
+}
+inline void IntMap::clear_intstring() {
+  intstring_.Clear();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::int32, std::string >&
+IntMap::_internal_intstring() const {
+  return intstring_.GetMap();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::int32, std::string >&
+IntMap::intstring() const {
+  // @@protoc_insertion_point(field_map:mam.IntMap.intstring)
+  return _internal_intstring();
+}
+inline ::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::int32, std::string >*
+IntMap::_internal_mutable_intstring() {
+  return intstring_.MutableMap();
+}
+inline ::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::int32, std::string >*
+IntMap::mutable_intstring() {
+  // @@protoc_insertion_point(field_mutable_map:mam.IntMap.intstring)
+  return _internal_mutable_intstring();
+}
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// IntObjMap
+
+// map<string, .mam.SubType> intobjmap = 1;
+inline int IntObjMap::_internal_intobjmap_size() const {
+  return intobjmap_.size();
+}
+inline int IntObjMap::intobjmap_size() const {
+  return _internal_intobjmap_size();
+}
+inline void IntObjMap::clear_intobjmap() {
+  intobjmap_.Clear();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::Map< std::string, ::mam::SubType >&
+IntObjMap::_internal_intobjmap() const {
+  return intobjmap_.GetMap();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::Map< std::string, ::mam::SubType >&
+IntObjMap::intobjmap() const {
+  // @@protoc_insertion_point(field_map:mam.IntObjMap.intobjmap)
+  return _internal_intobjmap();
+}
+inline ::PROTOBUF_NAMESPACE_ID::Map< std::string, ::mam::SubType >*
+IntObjMap::_internal_mutable_intobjmap() {
+  return intobjmap_.MutableMap();
+}
+inline ::PROTOBUF_NAMESPACE_ID::Map< std::string, ::mam::SubType >*
+IntObjMap::mutable_intobjmap() {
+  // @@protoc_insertion_point(field_mutable_map:mam.IntObjMap.intobjmap)
+  return _internal_mutable_intobjmap();
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

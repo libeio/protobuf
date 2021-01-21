@@ -23,12 +23,26 @@ message Digimon
     ShouldType x_enum = 11;
     SubType st = 12;
     repeated SubType rst = 13;
+    repeated int32 x_ia = 14;
 }
 
 message SubType {
     int32 y_i32 = 1;
 }
 
-//    string name = 3;
-//    int32 time = 4;
-//    map <string, ShouldType> dic = 5;
+message IntArray {
+    repeated int32 iarray = 1;
+}
+
+message StArray {
+    repeated SubType sts = 1;
+}
+
+
+message IntMap {
+    map <int32, string> intstring = 1;
+}
+
+message IntObjMap {
+    map <string, SubType> intobjmap = 1;
+}

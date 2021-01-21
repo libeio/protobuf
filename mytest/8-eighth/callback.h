@@ -1,21 +1,18 @@
 
 #include <cstdio>
-#include <cstring>
-#include <cstdint>
-#include <string>
-#include <exception>
+#include <stdexcept>
 
-#include "seventh.pb.h"
+#include <google/protobuf/message.h>
+#include <google/protobuf/descriptor.h>
+#include <google/protobuf/reflection.h>
 
-void opaque_print_values(const google::protobuf::Message& msg)
+void serialize_callback(const google::protobuf::Message& msg)
 {
     const std::string tn = msg.GetDescriptor()->name();
     const int fc = msg.GetDescriptor()->field_count();
     const google::protobuf::Reflection* ref = msg.GetReflection();
 
-    int i;
-
-    for (i = 0; i < fc; i++)
+    for (int i = 0; i < fc; i++)
     {
         const google::protobuf::FieldDescriptor * f = msg.GetDescriptor()->field(i);    // 如果 field 是 repeated, 那么其 type 以元素类型为准
         switch (f->type())
@@ -32,7 +29,7 @@ void opaque_print_values(const google::protobuf::Message& msg)
                     printf("\n");
                 } else {
                     double __val = ref->GetDouble(msg, f);
-                    printf("single double: %f\n", __val);
+                    printf("%s:%f,", f->name().c_str(), __val);
                 }
             }
             break;
@@ -48,7 +45,7 @@ void opaque_print_values(const google::protobuf::Message& msg)
                     printf("\n");
                 } else {
                     double __val = ref->GetFloat(msg, f);
-                    printf("single float: %f\n", __val);
+                    printf("%s:%f,", f->name().c_str(), __val);
                 }
             }
             break;
@@ -64,7 +61,7 @@ void opaque_print_values(const google::protobuf::Message& msg)
                     printf("\n");
                 } else {
                     int64_t __val = ref->GetInt64(msg, f);
-                    printf("single int64: %ld\n", __val);
+                    printf("%s:%ld,", f->name().c_str(), __val);
                 }
             }
             break;
@@ -80,7 +77,7 @@ void opaque_print_values(const google::protobuf::Message& msg)
                     printf("\n");
                 } else {
                     uint64_t __val = ref->GetUInt64(msg, f);
-                    printf("single uint64: %lu\n", __val);
+                    printf("%s:%lu,", f->name().c_str(), __val);
                 }
             }
             break;
@@ -96,7 +93,7 @@ void opaque_print_values(const google::protobuf::Message& msg)
                     printf("\n");
                 } else {
                     int32_t __val = ref->GetInt32(msg, f);
-                    printf("single int32: %d\n", __val);
+                    printf("%s:%d,", f->name().c_str(), __val);
                 }
             }
             break;
@@ -112,7 +109,7 @@ void opaque_print_values(const google::protobuf::Message& msg)
                     printf("\n");
                 } else {
                     uint32_t __val = ref->GetUInt32(msg, f);
-                    printf("single uint32: %u\n", __val);
+                    printf("%s:%u,", f->name().c_str(), __val);
                 }
             }
             break;
@@ -128,7 +125,7 @@ void opaque_print_values(const google::protobuf::Message& msg)
                     printf("\n");
                 } else {
                     bool __val = ref->GetBool(msg, f);
-                    printf("single bool: %s\n", __val ? "true" : "false");
+                    printf("%s:%s,", f->name().c_str(), __val ? "true" : "false");
                 }
             }
             break;
@@ -144,14 +141,14 @@ void opaque_print_values(const google::protobuf::Message& msg)
                     printf("\n");
                 } else {
                     std::string __val = ref->GetString(msg, f);
-                    printf("single bool: %s\n", __val.c_str());
+                    printf("%s:%s,", f->name().c_str(), __val.c_str());
                 }
             }
             break;
             case google::protobuf::FieldDescriptor::Type::TYPE_MESSAGE:
             {
                 if (f->is_map() && f->is_repeated()) {  // map
-                    printf("map message:\n");
+                    // printf("map message:\n");
                     int __size = ref->FieldSize(msg, f);    // size of map
                     for (int __i = 0; __i < __size; __i++) {
                         for (int __k = 0; __k < 2; __k++) { // first as key, second as value
@@ -210,7 +207,7 @@ void opaque_print_values(const google::protobuf::Message& msg)
                                 case google::protobuf::FieldDescriptor::Type::TYPE_MESSAGE:
                                 {
                                     const google::protobuf::Message & __msg = _msg.GetReflection()->GetMessage(_msg, _f);
-                                    opaque_print_values(__msg);
+                                    serialize_callback(__msg);
                                 }
                                 break;
                                 case google::protobuf::FieldDescriptor::Type::TYPE_BYTES:
@@ -234,16 +231,16 @@ void opaque_print_values(const google::protobuf::Message& msg)
                         }
                     }
                 } else if (f->is_repeated()) {          // repeated struct
-                    printf("array message:\n");
+                    // printf("array message:\n");
                     int __size = ref->FieldSize(msg, f);
                     for (int __i = 0; __i < __size; __i++) {
                         const google::protobuf::Message & __msg = ref->GetRepeatedMessage(msg, f, __i);
-                        opaque_print_values(__msg);
+                        serialize_callback(__msg);
                     }
                 } else if (f->is_optional()) {          // ordinary struct
                     printf("single message:\n");
                     const google::protobuf::Message & __msg = ref->GetMessage(msg, f);
-                    opaque_print_values(__msg);
+                    serialize_callback(__msg);
                 }
             }
             break;
@@ -266,8 +263,8 @@ void opaque_print_values(const google::protobuf::Message& msg)
                 if (f->is_repeated()) {
                     // it doesn't make any sense.
                 } else {
-                    int32_t e = ref->GetEnumValue(msg, f);
-                    printf("enum: %d\n", e);
+                    int32_t __val = ref->GetEnumValue(msg, f);
+                    printf("%s:%d,", f->name().c_str(), __val);
                 }
             }
             break;
@@ -279,38 +276,7 @@ void opaque_print_values(const google::protobuf::Message& msg)
         }
     }
 
+    printf("\n");
+
     return ;
-}
-
-int main(int argc, char* argv[])
-{
-    (void) argc;
-    (void) argv;
-
-    mam::Digimon msg;
-    
-    msg.set_x_d(3.14159);
-    msg.set_x_f(2.71828);
-    msg.set_x_i64(-123456789123);
-    msg.set_x_ui64(123456789123);
-    msg.set_x_i32(-123456789);
-    msg.set_x_ui32(123456789);
-    msg.set_x_bl(true);
-    msg.set_x_str("Hello World");
-    msg.set_x_enum(mam::ShouldType::TimeType);
-    msg.set_x_bs(std::string{ '\x01', '\x00', '\x25', '\xaf', '\x34' });
-
-    msg.mutable_x_map()->insert(google::protobuf::MapPair<std::string, double>("Pi", 3.14159));
-    msg.mutable_x_map()->insert(google::protobuf::MapPair<std::string, double>("Golden", 0.618));
-
-    msg.mutable_st()->set_y_i32(128);
-    msg.mutable_st()->set_y_i32(256);
-
-    msg.mutable_x_ia()->Add(234);
-    msg.mutable_x_ia()->Add(345);
-    msg.mutable_x_ia()->Add(456);
-
-    opaque_print_values(msg);
-
-    return 0;
 }

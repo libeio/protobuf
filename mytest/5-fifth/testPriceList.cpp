@@ -20,12 +20,12 @@ int main(int argc, char* argv[])
         mam::PriceObj price_obj;
         
         price_list.set_date("2021-01-15");
-        
+    
         price_obj.set_price("1023.456");
-        (*price_list.mutable_dic())["apple"] = price_obj;
-        
+        price_list.mutable_dic()->insert(google::protobuf::MapPair<std::string, mam::PriceObj>("apple", price_obj));
+
         price_obj.set_price("2266.895");
-        (*price_list.mutable_dic())["pear"] = price_obj;
+        price_list.mutable_dic()->insert(google::protobuf::MapPair<std::string, mam::PriceObj>("pear", price_obj));
         
         assert(price_list.SerializeToString(&strPriceList));
         

@@ -6,9 +6,10 @@ option(BUILD_1_FIRST_TEST   "Build 1-first program"    OFF)
 option(BUILD_2_SECOND_TEST  "Build 2-second program"   OFF)
 option(BUILD_3_THIRD_TEST   "Build 3-third program"    OFF)
 option(BUILD_4_FORTH_TEST   "Build 4-forth program"    OFF)
-option(BUILD_5_FIFTH_TEST   "Build 5-fifth program"    OFF)
-option(BUILD_6_SIXTH_TEST   "Build 6-sixth program"    OFF)
+option(BUILD_5_FIFTH_TEST   "Build 5-fifth program"    ON)
+option(BUILD_6_SIXTH_TEST   "Build 6-sixth program"    ON)
 option(BUILD_7_SEVENTH_TEST "Build 7-seventh program"  ON)
+option(BUILD_8_EIGHTH_TEST  "Build 8-eighth program"   ON)
 
 #
 # if u wanna release, do like this `cmake -DCMAKE_BUILD_TYPE=Release`
@@ -69,6 +70,10 @@ endif()
 
 if(BUILD_7_SEVENTH_TEST)
 	add_subdirectory(7-seventh)
+endif()
+
+if(BUILD_8_EIGHTH_TEST)
+	add_subdirectory(8-eighth)
 endif()
 
 #
