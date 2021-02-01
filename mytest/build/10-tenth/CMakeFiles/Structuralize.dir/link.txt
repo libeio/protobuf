@@ -1,0 +1,1 @@
+/usr/bin/c++   -Wno-non-virtual-dtor -std=c++11 -g -O0 -Wall -Wextra -pedantic -Wno-unknown-pragmas -pthread -g  -rdynamic CMakeFiles/Structuralize.dir/Structuralize.cpp.o CMakeFiles/Structuralize.dir/tenth.pb.cc.o  -o Structuralize  -L/usr/local/protobuf/lib  -L/usr/local/re2/lib64 -Wl,-rpath,/usr/local/protobuf/lib:/usr/local/re2/lib64 -lre2 -lprotobuf 

@@ -42,4 +42,7 @@
 - 4-forth: 通过迭代器访问 repeated 结构
 - 5-fifth: 映射表的使用
 - 6-sixth: 类型描述
-- 7-seventh: 类型反射
+- 7-seventh: 类型反射(alpha)
+- 8-eighth: 类型反射(beta)
+- 9-ninth: option 使用(alpha)
+- 10-tenth: option 使用(beta)

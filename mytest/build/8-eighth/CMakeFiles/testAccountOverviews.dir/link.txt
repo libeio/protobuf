@@ -1,0 +1,1 @@
+/usr/bin/c++   -Wno-non-virtual-dtor -std=c++11 -g -O0 -Wall -Wextra -pedantic -Wno-unknown-pragmas -pthread -g  -rdynamic CMakeFiles/testAccountOverviews.dir/testAccountOverviews.cpp.o CMakeFiles/testAccountOverviews.dir/eighth.pb.cc.o  -o testAccountOverviews  -L/usr/local/protobuf/lib -Wl,-rpath,/usr/local/protobuf/lib -lprotobuf 
