@@ -2,16 +2,19 @@ cmake_minimum_required(VERSION 2.8.0)
 
 project("Protobuf Test" C CXX)
 
-option(BUILD_1_FIRST_TEST   "Build 1-first program"    OFF)
-option(BUILD_2_SECOND_TEST  "Build 2-second program"   OFF)
-option(BUILD_3_THIRD_TEST   "Build 3-third program"    OFF)
-option(BUILD_4_FORTH_TEST   "Build 4-forth program"    OFF)
-option(BUILD_5_FIFTH_TEST   "Build 5-fifth program"    OFF)
-option(BUILD_6_SIXTH_TEST   "Build 6-sixth program"    ON)
-option(BUILD_7_SEVENTH_TEST "Build 7-seventh program"  OFF)
-option(BUILD_8_EIGHTH_TEST  "Build 8-eighth program"   ON)
-option(BUILD_9_NINTH_TEST   "Build 9-ninth program"    ON)
-option(BUILD_10_TENTH_TEST  "Build 10-tenth program"   ON)
+option(BUILD_1_FIRST_TEST   	"Build 1-first program"    		OFF)
+option(BUILD_2_SECOND_TEST  	"Build 2-second program"   		OFF)
+option(BUILD_3_THIRD_TEST   	"Build 3-third program"    		OFF)
+option(BUILD_4_FORTH_TEST   	"Build 4-forth program"    		OFF)
+option(BUILD_5_FIFTH_TEST   	"Build 5-fifth program"    		OFF)
+option(BUILD_6_SIXTH_TEST   	"Build 6-sixth program"   		ON)
+option(BUILD_7_SEVENTH_TEST 	"Build 7-seventh program"  		OFF)
+option(BUILD_8_EIGHTH_TEST  	"Build 8-eighth program"   		ON)
+option(BUILD_9_NINTH_TEST   	"Build 9-ninth program"    		OFF)
+option(BUILD_10_TENTH_TEST  	"Build 10-tenth program"   		OFF)
+option(BUILD_11_ELEVENTH_TEST  	"Build 11-eleventh program" 	ON)
+option(BUILD_12_TWELFTH_TEST  	"Build 12-twelfth program"  	ON)
+
 
 #
 # if u wanna release, do like this `cmake -DCMAKE_BUILD_TYPE=Release`
@@ -84,6 +87,14 @@ endif()
 
 if(BUILD_10_TENTH_TEST)
 	add_subdirectory(10-tenth)
+endif()
+
+if(BUILD_11_ELEVENTH_TEST)
+	add_subdirectory(11-eleventh)
+endif()
+
+if(BUILD_12_TWELFTH_TEST)
+	add_subdirectory(12-twelfth)
 endif()
 
 #

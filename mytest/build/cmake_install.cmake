@@ -41,8 +41,8 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("/home/gitfork/protobuf/mytest/build/6-sixth/cmake_install.cmake")
   include("/home/gitfork/protobuf/mytest/build/8-eighth/cmake_install.cmake")
-  include("/home/gitfork/protobuf/mytest/build/9-ninth/cmake_install.cmake")
-  include("/home/gitfork/protobuf/mytest/build/10-tenth/cmake_install.cmake")
+  include("/home/gitfork/protobuf/mytest/build/11-eleventh/cmake_install.cmake")
+  include("/home/gitfork/protobuf/mytest/build/12-twelfth/cmake_install.cmake")
 
 endif()
 

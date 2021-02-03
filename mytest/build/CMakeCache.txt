@@ -15,7 +15,13 @@
 ########################
 
 //Build 10-tenth program
-BUILD_10_TENTH_TEST:BOOL=ON
+BUILD_10_TENTH_TEST:BOOL=OFF
+
+//Build 11-eleventh program
+BUILD_11_ELEVENTH_TEST:BOOL=ON
+
+//Build 12-twelfth program
+BUILD_12_TWELFTH_TEST:BOOL=ON
 
 //Build 1-first program
 BUILD_1_FIRST_TEST:BOOL=OFF
@@ -42,7 +48,7 @@ BUILD_7_SEVENTH_TEST:BOOL=OFF
 BUILD_8_EIGHTH_TEST:BOOL=ON
 
 //Build 9-ninth program
-BUILD_9_NINTH_TEST:BOOL=ON
+BUILD_9_NINTH_TEST:BOOL=OFF
 
 //Path to a program.
 CMAKE_AR:FILEPATH=/usr/bin/ar
@@ -241,12 +247,6 @@ protobuf_INCLUDE:PATH=/usr/local/protobuf/include
 
 //Path to a library.
 protobuf_LIBRARY:FILEPATH=/usr/local/protobuf/lib/libprotobuf.so
-
-//Path to a file.
-re2_INCLUDE:PATH=/usr/local/re2/include
-
-//Path to a library.
-re2_LIBRARY:FILEPATH=/usr/local/re2/lib64/libre2.so
 
 
 ########################

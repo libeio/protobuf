@@ -46,3 +46,5 @@
 - 8-eighth: 类型反射(beta)
 - 9-ninth: option 使用(alpha)
 - 10-tenth: option 使用(beta)
+- 11-eleventh: 反射方式向 pb 结构的 repeated 字段添加元素
+- 12-twelfth: 反射方式向 pb 结构的 map 字段中添加元素
