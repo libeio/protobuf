@@ -1,1 +1,0 @@
-/usr/bin/c++   -Wno-non-virtual-dtor -std=c++11 -g -O0 -Wall -Wextra -pedantic -Wno-unknown-pragmas -pthread -g  -rdynamic CMakeFiles/testSixth.dir/testSixth.cpp.o CMakeFiles/testSixth.dir/sixth.pb.cc.o  -o testSixth  -L/usr/local/protobuf/lib -Wl,-rpath,/usr/local/protobuf/lib -lprotobuf 
