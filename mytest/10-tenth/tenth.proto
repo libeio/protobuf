@@ -11,6 +11,8 @@ message FieldRule {
     uint32 pod_val_max = 3;
     uint32 pod_val_min = 4;
     string regex = 5;
+    int32 int32_as_key = 6;
+    string string_as_key = 7;
 }
 
 extend google.protobuf.FieldOptions {
@@ -51,11 +53,16 @@ message AccountOverview {
 }
 
 message ProfitDetail {
-    int32 accountid = 1;
+    int32 accountid = 1 [
+        (knightrule).int32_as_key = 1
+    ];
     string symbol = 2 [
+        (knightrule).string_as_key = "1",
         (knightrule).regex = "[\\d]{6}\\.(SH|sh|SZ|sz)"
     ];
-    int32 cfgvol = 3;
+    int32 cfgvol = 3 [
+        (knightrule).int32_as_key = 1
+    ];
     int32 buyvol = 4;
     int32 sellvol = 5;
     double buyamount = 6;

@@ -66,6 +66,13 @@ bool check_callback(const google::protobuf::Message& msg)
         const google::protobuf::FieldDescriptor * f = msg.GetDescriptor()->field(i);
         switch (f->type())
         {
+            case google::protobuf::FieldDescriptor::Type::TYPE_INT32:
+            {
+                int32_t _as_key = f->options().GetExtension(mam::knightrule).int32_as_key();
+                if (_as_key > 0) {
+                    printf("====> %s as key\n", f->name().c_str());
+                }
+            }
             break;
             case google::protobuf::FieldDescriptor::Type::TYPE_UINT32:
             {
@@ -85,6 +92,11 @@ bool check_callback(const google::protobuf::Message& msg)
             case google::protobuf::FieldDescriptor::Type::TYPE_STRING:
             {
                 std::string _val = ref->GetString(msg, f);
+
+                std::string _as_key = f->options().GetExtension(mam::knightrule).string_as_key();
+                if (! _as_key.empty()) {
+                    printf("====> %s as key\n", f->name().c_str());
+                }
 
                 std::string _rule_regex = f->options().GetExtension(mam::knightrule).regex();
  
@@ -106,7 +118,6 @@ bool check_callback(const google::protobuf::Message& msg)
             break;
             case google::protobuf::FieldDescriptor::Type::TYPE_INT64:
             case google::protobuf::FieldDescriptor::Type::TYPE_UINT64:
-            case google::protobuf::FieldDescriptor::Type::TYPE_INT32:
             case google::protobuf::FieldDescriptor::Type::TYPE_DOUBLE:
             case google::protobuf::FieldDescriptor::Type::TYPE_FLOAT:
             case google::protobuf::FieldDescriptor::Type::TYPE_BOOL:

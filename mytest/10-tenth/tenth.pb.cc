@@ -128,6 +128,8 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_tenth_2eproto::offsets[] PROTO
   PROTOBUF_FIELD_OFFSET(::mam::FieldRule, pod_val_max_),
   PROTOBUF_FIELD_OFFSET(::mam::FieldRule, pod_val_min_),
   PROTOBUF_FIELD_OFFSET(::mam::FieldRule, regex_),
+  PROTOBUF_FIELD_OFFSET(::mam::FieldRule, int32_as_key_),
+  PROTOBUF_FIELD_OFFSET(::mam::FieldRule, string_as_key_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mam::SaveRequest, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -189,10 +191,10 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_tenth_2eproto::offsets[] PROTO
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::mam::FieldRule)},
-  { 10, -1, sizeof(::mam::SaveRequest)},
-  { 20, -1, sizeof(::mam::AccountOverview)},
-  { 38, -1, sizeof(::mam::ProfitDetail)},
-  { 54, -1, sizeof(::mam::AccountInfo)},
+  { 12, -1, sizeof(::mam::SaveRequest)},
+  { 22, -1, sizeof(::mam::AccountOverview)},
+  { 40, -1, sizeof(::mam::ProfitDetail)},
+  { 56, -1, sizeof(::mam::AccountInfo)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -205,34 +207,36 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 
 const char descriptor_table_protodef_tenth_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\013tenth.proto\022\003mam\032 google/protobuf/desc"
-  "riptor.proto\"n\n\tFieldRule\022\023\n\013str_len_max"
-  "\030\001 \001(\r\022\023\n\013str_len_min\030\002 \001(\r\022\023\n\013pod_val_m"
-  "ax\030\003 \001(\r\022\023\n\013pod_val_min\030\004 \001(\r\022\r\n\005regex\030\005"
-  " \001(\t\"\272\001\n\013SaveRequest\022\033\n\004mode\030\001 \001(\0162\r.mam"
-  ".SaveMode\022\014\n\004date\030\002 \001(\t\022.\n\020account_overv"
-  "iew\030\003 \003(\0132\024.mam.AccountOverview\022(\n\rprofi"
-  "t_detail\030\004 \003(\0132\021.mam.ProfitDetail\022&\n\014acc"
-  "ount_info\030\005 \003(\0132\020.mam.AccountInfo\"\355\001\n\017Ac"
-  "countOverview\022\021\n\taccountid\030\001 \001(\005\022\020\n\010turn"
-  "over\030\002 \001(\001\022\014\n\004rate\030\003 \001(\001\022\013\n\003fee\030\004 \001(\001\022\016\n"
-  "\006profit\030\005 \001(\001\022\020\n\010canceled\030\006 \001(\001\022\016\n\006faile"
-  "d\030\007 \001(\001\022\022\n\nacceptcost\030\010 \001(\001\022\021\n\tmatchcost"
-  "\030\t \001(\001\022\014\n\004base\030\n \001(\001\022\024\n\014close_profit\030\013 \001"
-  "(\001\022\016\n\006server\030\014 \001(\005\022\r\n\005group\030\r \001(\t\"\357\001\n\014Pr"
-  "ofitDetail\022\021\n\taccountid\030\001 \001(\005\022,\n\006symbol\030"
-  "\002 \001(\tB\034\262\366\004\030*\026[\\d]{6}\\.(SH|sh|SZ|sz)\022\016\n\006c"
-  "fgvol\030\003 \001(\005\022\016\n\006buyvol\030\004 \001(\005\022\017\n\007sellvol\030\005"
-  " \001(\005\022\021\n\tbuyamount\030\006 \001(\001\022\022\n\nsellamount\030\007 "
-  "\001(\001\022\023\n\013floatprofit\030\010 \001(\001\022\024\n\014settleprofit"
-  "\030\t \001(\001\022\013\n\003fee\030\n \001(\001\022\016\n\006server\030\013 \001(\005\"\244\001\n\013"
-  "AccountInfo\022\n\n\002id\030\001 \001(\r\022\024\n\014shcommission\030"
-  "\002 \001(\t\022\024\n\014szcommission\030\003 \001(\t\022\017\n\007lowcost\030\004"
-  " \001(\005\022\n\n\002as\030\005 \001(\t\022\017\n\007buyType\030\006 \001(\t\022\020\n\010sel"
-  "lType\030\007 \001(\t\022\r\n\005group\030\010 \001(\t\022\016\n\006server\030\t \001"
-  "(\t*8\n\010SaveMode\022\010\n\004None\020\000\022\n\n\006Create\020\001\022\n\n\006"
-  "Update\020\002\022\n\n\006Append\020\003:B\n\nknightrule\022\035.goo"
-  "gle.protobuf.FieldOptions\030\346N \001(\0132\016.mam.F"
-  "ieldRuleb\006proto3"
+  "riptor.proto\"\233\001\n\tFieldRule\022\023\n\013str_len_ma"
+  "x\030\001 \001(\r\022\023\n\013str_len_min\030\002 \001(\r\022\023\n\013pod_val_"
+  "max\030\003 \001(\r\022\023\n\013pod_val_min\030\004 \001(\r\022\r\n\005regex\030"
+  "\005 \001(\t\022\024\n\014int32_as_key\030\006 \001(\005\022\025\n\rstring_as"
+  "_key\030\007 \001(\t\"\272\001\n\013SaveRequest\022\033\n\004mode\030\001 \001(\016"
+  "2\r.mam.SaveMode\022\014\n\004date\030\002 \001(\t\022.\n\020account"
+  "_overview\030\003 \003(\0132\024.mam.AccountOverview\022(\n"
+  "\rprofit_detail\030\004 \003(\0132\021.mam.ProfitDetail\022"
+  "&\n\014account_info\030\005 \003(\0132\020.mam.AccountInfo\""
+  "\355\001\n\017AccountOverview\022\021\n\taccountid\030\001 \001(\005\022\020"
+  "\n\010turnover\030\002 \001(\001\022\014\n\004rate\030\003 \001(\001\022\013\n\003fee\030\004 "
+  "\001(\001\022\016\n\006profit\030\005 \001(\001\022\020\n\010canceled\030\006 \001(\001\022\016\n"
+  "\006failed\030\007 \001(\001\022\022\n\nacceptcost\030\010 \001(\001\022\021\n\tmat"
+  "chcost\030\t \001(\001\022\014\n\004base\030\n \001(\001\022\024\n\014close_prof"
+  "it\030\013 \001(\001\022\016\n\006server\030\014 \001(\005\022\r\n\005group\030\r \001(\t\""
+  "\206\002\n\014ProfitDetail\022\031\n\taccountid\030\001 \001(\005B\006\262\366\004"
+  "\0020\001\0223\n\006symbol\030\002 \001(\tB#\262\366\004\003:\0011\262\366\004\030*\026[\\d]{6"
+  "}\\.(SH|sh|SZ|sz)\022\026\n\006cfgvol\030\003 \001(\005B\006\262\366\004\0020\001"
+  "\022\016\n\006buyvol\030\004 \001(\005\022\017\n\007sellvol\030\005 \001(\005\022\021\n\tbuy"
+  "amount\030\006 \001(\001\022\022\n\nsellamount\030\007 \001(\001\022\023\n\013floa"
+  "tprofit\030\010 \001(\001\022\024\n\014settleprofit\030\t \001(\001\022\013\n\003f"
+  "ee\030\n \001(\001\022\016\n\006server\030\013 \001(\005\"\244\001\n\013AccountInfo"
+  "\022\n\n\002id\030\001 \001(\r\022\024\n\014shcommission\030\002 \001(\t\022\024\n\014sz"
+  "commission\030\003 \001(\t\022\017\n\007lowcost\030\004 \001(\005\022\n\n\002as\030"
+  "\005 \001(\t\022\017\n\007buyType\030\006 \001(\t\022\020\n\010sellType\030\007 \001(\t"
+  "\022\r\n\005group\030\010 \001(\t\022\016\n\006server\030\t \001(\t*8\n\010SaveM"
+  "ode\022\010\n\004None\020\000\022\n\n\006Create\020\001\022\n\n\006Update\020\002\022\n\n"
+  "\006Append\020\003:B\n\nknightrule\022\035.google.protobu"
+  "f.FieldOptions\030\346N \001(\0132\016.mam.FieldRuleb\006p"
+  "roto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_tenth_2eproto_deps[1] = {
   &::descriptor_table_google_2fprotobuf_2fdescriptor_2eproto,
@@ -246,7 +250,7 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_ten
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_tenth_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_tenth_2eproto = {
-  false, false, descriptor_table_protodef_tenth_2eproto, "tenth.proto", 1136,
+  false, false, descriptor_table_protodef_tenth_2eproto, "tenth.proto", 1205,
   &descriptor_table_tenth_2eproto_once, descriptor_table_tenth_2eproto_sccs, descriptor_table_tenth_2eproto_deps, 5, 1,
   schemas, file_default_instances, TableStruct_tenth_2eproto::offsets,
   file_level_metadata_tenth_2eproto, 5, file_level_enum_descriptors_tenth_2eproto, file_level_service_descriptors_tenth_2eproto,
@@ -294,18 +298,24 @@ FieldRule::FieldRule(const FieldRule& from)
     regex_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_regex(),
       GetArena());
   }
+  string_as_key_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_string_as_key().empty()) {
+    string_as_key_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_string_as_key(),
+      GetArena());
+  }
   ::memcpy(&str_len_max_, &from.str_len_max_,
-    static_cast<size_t>(reinterpret_cast<char*>(&pod_val_min_) -
-    reinterpret_cast<char*>(&str_len_max_)) + sizeof(pod_val_min_));
+    static_cast<size_t>(reinterpret_cast<char*>(&int32_as_key_) -
+    reinterpret_cast<char*>(&str_len_max_)) + sizeof(int32_as_key_));
   // @@protoc_insertion_point(copy_constructor:mam.FieldRule)
 }
 
 void FieldRule::SharedCtor() {
   ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_FieldRule_tenth_2eproto.base);
   regex_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  string_as_key_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   ::memset(&str_len_max_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&pod_val_min_) -
-      reinterpret_cast<char*>(&str_len_max_)) + sizeof(pod_val_min_));
+      reinterpret_cast<char*>(&int32_as_key_) -
+      reinterpret_cast<char*>(&str_len_max_)) + sizeof(int32_as_key_));
 }
 
 FieldRule::~FieldRule() {
@@ -317,6 +327,7 @@ FieldRule::~FieldRule() {
 void FieldRule::SharedDtor() {
   GOOGLE_DCHECK(GetArena() == nullptr);
   regex_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  string_as_key_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void FieldRule::ArenaDtor(void* object) {
@@ -341,9 +352,10 @@ void FieldRule::Clear() {
   (void) cached_has_bits;
 
   regex_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  string_as_key_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   ::memset(&str_len_max_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&pod_val_min_) -
-      reinterpret_cast<char*>(&str_len_max_)) + sizeof(pod_val_min_));
+      reinterpret_cast<char*>(&int32_as_key_) -
+      reinterpret_cast<char*>(&str_len_max_)) + sizeof(int32_as_key_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -389,6 +401,22 @@ const char* FieldRule::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::
           auto str = _internal_mutable_regex();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "mam.FieldRule.regex"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // int32 int32_as_key = 6;
+      case 6:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 48)) {
+          int32_as_key_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string string_as_key = 7;
+      case 7:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 58)) {
+          auto str = _internal_mutable_string_as_key();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "mam.FieldRule.string_as_key"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -454,6 +482,22 @@ failure:
         5, this->_internal_regex(), target);
   }
 
+  // int32 int32_as_key = 6;
+  if (this->int32_as_key() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(6, this->_internal_int32_as_key(), target);
+  }
+
+  // string string_as_key = 7;
+  if (this->string_as_key().size() > 0) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_string_as_key().data(), static_cast<int>(this->_internal_string_as_key().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "mam.FieldRule.string_as_key");
+    target = stream->WriteStringMaybeAliased(
+        7, this->_internal_string_as_key(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -475,6 +519,13 @@ size_t FieldRule::ByteSizeLong() const {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_regex());
+  }
+
+  // string string_as_key = 7;
+  if (this->string_as_key().size() > 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_string_as_key());
   }
 
   // uint32 str_len_max = 1;
@@ -503,6 +554,13 @@ size_t FieldRule::ByteSizeLong() const {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
         this->_internal_pod_val_min());
+  }
+
+  // int32 int32_as_key = 6;
+  if (this->int32_as_key() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_int32_as_key());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -539,6 +597,9 @@ void FieldRule::MergeFrom(const FieldRule& from) {
   if (from.regex().size() > 0) {
     _internal_set_regex(from._internal_regex());
   }
+  if (from.string_as_key().size() > 0) {
+    _internal_set_string_as_key(from._internal_string_as_key());
+  }
   if (from.str_len_max() != 0) {
     _internal_set_str_len_max(from._internal_str_len_max());
   }
@@ -550,6 +611,9 @@ void FieldRule::MergeFrom(const FieldRule& from) {
   }
   if (from.pod_val_min() != 0) {
     _internal_set_pod_val_min(from._internal_pod_val_min());
+  }
+  if (from.int32_as_key() != 0) {
+    _internal_set_int32_as_key(from._internal_int32_as_key());
   }
 }
 
@@ -575,9 +639,10 @@ void FieldRule::InternalSwap(FieldRule* other) {
   using std::swap;
   _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   regex_.Swap(&other->regex_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  string_as_key_.Swap(&other->string_as_key_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(FieldRule, pod_val_min_)
-      + sizeof(FieldRule::pod_val_min_)
+      PROTOBUF_FIELD_OFFSET(FieldRule, int32_as_key_)
+      + sizeof(FieldRule::int32_as_key_)
       - PROTOBUF_FIELD_OFFSET(FieldRule, str_len_max_)>(
           reinterpret_cast<char*>(&str_len_max_),
           reinterpret_cast<char*>(&other->str_len_max_));
@@ -1484,7 +1549,7 @@ const char* ProfitDetail::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_I
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // int32 accountid = 1;
+      // int32 accountid = 1 [(.mam.knightrule) = {
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
           accountid_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
@@ -1500,7 +1565,7 @@ const char* ProfitDetail::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_I
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // int32 cfgvol = 3;
+      // int32 cfgvol = 3 [(.mam.knightrule) = {
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
           cfgvol_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
@@ -1591,7 +1656,7 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // int32 accountid = 1;
+  // int32 accountid = 1 [(.mam.knightrule) = {
   if (this->accountid() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_accountid(), target);
@@ -1607,7 +1672,7 @@ failure:
         2, this->_internal_symbol(), target);
   }
 
-  // int32 cfgvol = 3;
+  // int32 cfgvol = 3 [(.mam.knightrule) = {
   if (this->cfgvol() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(3, this->_internal_cfgvol(), target);
@@ -1684,14 +1749,14 @@ size_t ProfitDetail::ByteSizeLong() const {
         this->_internal_symbol());
   }
 
-  // int32 accountid = 1;
+  // int32 accountid = 1 [(.mam.knightrule) = {
   if (this->accountid() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
         this->_internal_accountid());
   }
 
-  // int32 cfgvol = 3;
+  // int32 cfgvol = 3 [(.mam.knightrule) = {
   if (this->cfgvol() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(

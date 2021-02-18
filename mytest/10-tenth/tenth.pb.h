@@ -225,10 +225,12 @@ class FieldRule PROTOBUF_FINAL :
 
   enum : int {
     kRegexFieldNumber = 5,
+    kStringAsKeyFieldNumber = 7,
     kStrLenMaxFieldNumber = 1,
     kStrLenMinFieldNumber = 2,
     kPodValMaxFieldNumber = 3,
     kPodValMinFieldNumber = 4,
+    kInt32AsKeyFieldNumber = 6,
   };
   // string regex = 5;
   void clear_regex();
@@ -244,6 +246,22 @@ class FieldRule PROTOBUF_FINAL :
   const std::string& _internal_regex() const;
   void _internal_set_regex(const std::string& value);
   std::string* _internal_mutable_regex();
+  public:
+
+  // string string_as_key = 7;
+  void clear_string_as_key();
+  const std::string& string_as_key() const;
+  void set_string_as_key(const std::string& value);
+  void set_string_as_key(std::string&& value);
+  void set_string_as_key(const char* value);
+  void set_string_as_key(const char* value, size_t size);
+  std::string* mutable_string_as_key();
+  std::string* release_string_as_key();
+  void set_allocated_string_as_key(std::string* string_as_key);
+  private:
+  const std::string& _internal_string_as_key() const;
+  void _internal_set_string_as_key(const std::string& value);
+  std::string* _internal_mutable_string_as_key();
   public:
 
   // uint32 str_len_max = 1;
@@ -282,6 +300,15 @@ class FieldRule PROTOBUF_FINAL :
   void _internal_set_pod_val_min(::PROTOBUF_NAMESPACE_ID::uint32 value);
   public:
 
+  // int32 int32_as_key = 6;
+  void clear_int32_as_key();
+  ::PROTOBUF_NAMESPACE_ID::int32 int32_as_key() const;
+  void set_int32_as_key(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_int32_as_key() const;
+  void _internal_set_int32_as_key(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:mam.FieldRule)
  private:
   class _Internal;
@@ -290,10 +317,12 @@ class FieldRule PROTOBUF_FINAL :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr regex_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr string_as_key_;
   ::PROTOBUF_NAMESPACE_ID::uint32 str_len_max_;
   ::PROTOBUF_NAMESPACE_ID::uint32 str_len_min_;
   ::PROTOBUF_NAMESPACE_ID::uint32 pod_val_max_;
   ::PROTOBUF_NAMESPACE_ID::uint32 pod_val_min_;
+  ::PROTOBUF_NAMESPACE_ID::int32 int32_as_key_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_tenth_2eproto;
 };
@@ -931,7 +960,7 @@ class ProfitDetail PROTOBUF_FINAL :
   std::string* _internal_mutable_symbol();
   public:
 
-  // int32 accountid = 1;
+  // int32 accountid = 1 [(.mam.knightrule) = {
   void clear_accountid();
   ::PROTOBUF_NAMESPACE_ID::int32 accountid() const;
   void set_accountid(::PROTOBUF_NAMESPACE_ID::int32 value);
@@ -940,7 +969,7 @@ class ProfitDetail PROTOBUF_FINAL :
   void _internal_set_accountid(::PROTOBUF_NAMESPACE_ID::int32 value);
   public:
 
-  // int32 cfgvol = 3;
+  // int32 cfgvol = 3 [(.mam.knightrule) = {
   void clear_cfgvol();
   ::PROTOBUF_NAMESPACE_ID::int32 cfgvol() const;
   void set_cfgvol(::PROTOBUF_NAMESPACE_ID::int32 value);
@@ -1473,6 +1502,88 @@ inline void FieldRule::set_allocated_regex(std::string* regex) {
   // @@protoc_insertion_point(field_set_allocated:mam.FieldRule.regex)
 }
 
+// int32 int32_as_key = 6;
+inline void FieldRule::clear_int32_as_key() {
+  int32_as_key_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 FieldRule::_internal_int32_as_key() const {
+  return int32_as_key_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 FieldRule::int32_as_key() const {
+  // @@protoc_insertion_point(field_get:mam.FieldRule.int32_as_key)
+  return _internal_int32_as_key();
+}
+inline void FieldRule::_internal_set_int32_as_key(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  int32_as_key_ = value;
+}
+inline void FieldRule::set_int32_as_key(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_int32_as_key(value);
+  // @@protoc_insertion_point(field_set:mam.FieldRule.int32_as_key)
+}
+
+// string string_as_key = 7;
+inline void FieldRule::clear_string_as_key() {
+  string_as_key_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline const std::string& FieldRule::string_as_key() const {
+  // @@protoc_insertion_point(field_get:mam.FieldRule.string_as_key)
+  return _internal_string_as_key();
+}
+inline void FieldRule::set_string_as_key(const std::string& value) {
+  _internal_set_string_as_key(value);
+  // @@protoc_insertion_point(field_set:mam.FieldRule.string_as_key)
+}
+inline std::string* FieldRule::mutable_string_as_key() {
+  // @@protoc_insertion_point(field_mutable:mam.FieldRule.string_as_key)
+  return _internal_mutable_string_as_key();
+}
+inline const std::string& FieldRule::_internal_string_as_key() const {
+  return string_as_key_.Get();
+}
+inline void FieldRule::_internal_set_string_as_key(const std::string& value) {
+  
+  string_as_key_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value, GetArena());
+}
+inline void FieldRule::set_string_as_key(std::string&& value) {
+  
+  string_as_key_.Set(
+    &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:mam.FieldRule.string_as_key)
+}
+inline void FieldRule::set_string_as_key(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  string_as_key_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value),
+              GetArena());
+  // @@protoc_insertion_point(field_set_char:mam.FieldRule.string_as_key)
+}
+inline void FieldRule::set_string_as_key(const char* value,
+    size_t size) {
+  
+  string_as_key_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:mam.FieldRule.string_as_key)
+}
+inline std::string* FieldRule::_internal_mutable_string_as_key() {
+  
+  return string_as_key_.Mutable(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline std::string* FieldRule::release_string_as_key() {
+  // @@protoc_insertion_point(field_release:mam.FieldRule.string_as_key)
+  return string_as_key_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void FieldRule::set_allocated_string_as_key(std::string* string_as_key) {
+  if (string_as_key != nullptr) {
+    
+  } else {
+    
+  }
+  string_as_key_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), string_as_key,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:mam.FieldRule.string_as_key)
+}
+
 // -------------------------------------------------------------------
 
 // SaveRequest
@@ -1986,7 +2097,7 @@ inline void AccountOverview::set_allocated_group(std::string* group) {
 
 // ProfitDetail
 
-// int32 accountid = 1;
+// int32 accountid = 1 [(.mam.knightrule) = {
 inline void ProfitDetail::clear_accountid() {
   accountid_ = 0;
 }
@@ -2068,7 +2179,7 @@ inline void ProfitDetail::set_allocated_symbol(std::string* symbol) {
   // @@protoc_insertion_point(field_set_allocated:mam.ProfitDetail.symbol)
 }
 
-// int32 cfgvol = 3;
+// int32 cfgvol = 3 [(.mam.knightrule) = {
 inline void ProfitDetail::clear_cfgvol() {
   cfgvol_ = 0;
 }
