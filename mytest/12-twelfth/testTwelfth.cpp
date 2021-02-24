@@ -60,8 +60,8 @@ int main(int argc, char* argv[])
                     const google::protobuf::FieldDescriptor * _map_msg_val_f = _map_msg->GetDescriptor()->FindFieldByName("value");
                     printf("val field: name=%s, type_name=%s\n", _map_msg_val_f->name().c_str(), _map_msg_val_f->type_name());
                     
-                    google::protobuf::Message * _map_msg_array_msg = _map_msg_ref->MutableMessage(_map_msg, _map_msg_val_f, nullptr);
-                    
+                    google::protobuf::Message * _map_msg_array_msg = _map_msg_ref->MutableMessage(_map_msg, _map_msg_val_f);
+                                        
                     const std::string _map_msg_array_msg_type_name = _map_msg_array_msg->GetDescriptor()->name();
                     const int _map_msg_array_msg_field_count = _map_msg_array_msg->GetDescriptor()->field_count();
 
