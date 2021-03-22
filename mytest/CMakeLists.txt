@@ -2,19 +2,19 @@ cmake_minimum_required(VERSION 2.8.0)
 
 project("Protobuf Test" C CXX)
 
-option(BUILD_1_FIRST_TEST   	"Build 1-first program"    		OFF)
-option(BUILD_2_SECOND_TEST  	"Build 2-second program"   		OFF)
-option(BUILD_3_THIRD_TEST   	"Build 3-third program"    		OFF)
-option(BUILD_4_FORTH_TEST   	"Build 4-forth program"    		OFF)
-option(BUILD_5_FIFTH_TEST   	"Build 5-fifth program"    		OFF)
-option(BUILD_6_SIXTH_TEST   	"Build 6-sixth program"   		ON)
-option(BUILD_7_SEVENTH_TEST 	"Build 7-seventh program"  		ON)
-option(BUILD_8_EIGHTH_TEST  	"Build 8-eighth program"   		ON)
-option(BUILD_9_NINTH_TEST   	"Build 9-ninth program"    		OFF)
-option(BUILD_10_TENTH_TEST  	"Build 10-tenth program"   		ON)
-option(BUILD_11_ELEVENTH_TEST  	"Build 11-eleventh program" 	ON)
-option(BUILD_12_TWELFTH_TEST  	"Build 12-twelfth program"  	ON)
-option(BUILD_13_THIRTEENTH_TEST "Build 13-thirteenth program"  	ON)
+option(BUILD_01_FIRST_TEST   	"Build 01_first program"    		ON)
+option(BUILD_02_SECOND_TEST  	"Build 02_second program"   		ON)
+option(BUILD_03_THIRD_TEST   	"Build 03_third program"    		ON)
+option(BUILD_04_FOURTH_TEST   	"Build 04_fourth program"    		ON)
+option(BUILD_05_FIFTH_TEST   	"Build 05_fifth program"    		ON)
+option(BUILD_06_SIXTH_TEST   	"Build 06_sixth program"   			ON)
+option(BUILD_07_SEVENTH_TEST 	"Build 07_seventh program"  		ON)
+option(BUILD_08_EIGHTH_TEST  	"Build 08_eighth program"   		ON)
+option(BUILD_09_NINTH_TEST   	"Build 09_ninth program"    		ON)
+option(BUILD_10_TENTH_TEST  	"Build 10_tenth program"   			ON)
+option(BUILD_11_ELEVENTH_TEST  	"Build 11_eleventh program" 		ON)
+option(BUILD_12_TWELFTH_TEST  	"Build 12_twelfth program"  		ON)
+option(BUILD_13_THIRTEENTH_TEST "Build 13_thirteenth program"  		ON)
 
 #
 # if u wanna release, do like this `cmake -DCMAKE_BUILD_TYPE=Release`
@@ -49,56 +49,56 @@ link_directories(${protobuf_LIBRARY_PATH})
 #
 # Test in Sub Directories
 #
-if(BUILD_1_FIRST_TEST)
-    add_subdirectory(1-first)
+if(BUILD_01_FIRST_TEST)
+    add_subdirectory(01_first)
 endif()
 
-if(BUILD_2_SECOND_TEST)
-    add_subdirectory(2-second)
+if(BUILD_02_SECOND_TEST)
+    add_subdirectory(02_second)
 endif()
 
-if(BUILD_3_THIRD_TEST)
-    add_subdirectory(3-third)
+if(BUILD_03_THIRD_TEST)
+    add_subdirectory(03_third)
 endif()
 
-if(BUILD_4_FORTH_TEST)
-	add_subdirectory(4-forth)
+if(BUILD_04_FOURTH_TEST)
+	add_subdirectory(04_fourth)
 endif()
 
-if(BUILD_5_FIFTH_TEST)
-	add_subdirectory(5-fifth)
+if(BUILD_05_FIFTH_TEST)
+	add_subdirectory(05_fifth)
 endif()
 
-if(BUILD_6_SIXTH_TEST)
-	add_subdirectory(6-sixth)
+if(BUILD_06_SIXTH_TEST)
+	add_subdirectory(06_sixth)
 endif()
 
-if(BUILD_7_SEVENTH_TEST)
-	add_subdirectory(7-seventh)
+if(BUILD_07_SEVENTH_TEST)
+	add_subdirectory(07_seventh)
 endif()
 
-if(BUILD_8_EIGHTH_TEST)
-	add_subdirectory(8-eighth)
+if(BUILD_08_EIGHTH_TEST)
+	add_subdirectory(08_eighth)
 endif()
 
-if(BUILD_9_NINTH_TEST)
-	add_subdirectory(9-ninth)
+if(BUILD_09_NINTH_TEST)
+	add_subdirectory(09_ninth)
 endif()
 
 if(BUILD_10_TENTH_TEST)
-	add_subdirectory(10-tenth)
+	add_subdirectory(10_tenth)
 endif()
 
 if(BUILD_11_ELEVENTH_TEST)
-	add_subdirectory(11-eleventh)
+	add_subdirectory(11_eleventh)
 endif()
 
 if(BUILD_12_TWELFTH_TEST)
-	add_subdirectory(12-twelfth)
+	add_subdirectory(12_twelfth)
 endif()
 
 if(BUILD_13_THIRTEENTH_TEST)
-	add_subdirectory(13-thirteenth)
+	add_subdirectory(13_thirteenth)
 endif()
 
 #
