@@ -48,6 +48,10 @@ class SceneDoubleDefaultTypeInternal {
  public:
   ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<SceneDouble> _instance;
 } _SceneDouble_default_instance_;
+class SceneOtherDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<SceneOther> _instance;
+} _SceneOther_default_instance_;
 }  // namespace mam
 static void InitDefaultsscc_info_FieldRule_fourteenth_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -119,6 +123,20 @@ static void InitDefaultsscc_info_SceneLong_fourteenth_2eproto() {
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_SceneLong_fourteenth_2eproto =
     {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_SceneLong_fourteenth_2eproto}, {}};
 
+static void InitDefaultsscc_info_SceneOther_fourteenth_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::mam::_SceneOther_default_instance_;
+    new (ptr) ::mam::SceneOther();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::mam::SceneOther::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_SceneOther_fourteenth_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_SceneOther_fourteenth_2eproto}, {}};
+
 static void InitDefaultsscc_info_SceneString_fourteenth_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
@@ -161,7 +179,7 @@ static void InitDefaultsscc_info_SceneULong_fourteenth_2eproto() {
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_SceneULong_fourteenth_2eproto =
     {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_SceneULong_fourteenth_2eproto}, {}};
 
-static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_fourteenth_2eproto[8];
+static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_fourteenth_2eproto[9];
 static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_fourteenth_2eproto = nullptr;
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_fourteenth_2eproto = nullptr;
 
@@ -321,6 +339,13 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_fourteenth_2eproto::offsets[] 
   PROTOBUF_FIELD_OFFSET(::mam::SceneDouble, iamd_le_zero_),
   PROTOBUF_FIELD_OFFSET(::mam::SceneDouble, iamd_ge_lt_zero_left_),
   PROTOBUF_FIELD_OFFSET(::mam::SceneDouble, iamd_ge_lt_zero_right_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::mam::SceneOther, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mam::SceneOther, rate_),
+  PROTOBUF_FIELD_OFFSET(::mam::SceneOther, server_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::mam::FieldRule)},
@@ -331,6 +356,7 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 97, -1, sizeof(::mam::SceneULong)},
   { 115, -1, sizeof(::mam::SceneFloat)},
   { 135, -1, sizeof(::mam::SceneDouble)},
+  { 155, -1, sizeof(::mam::SceneOther)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -342,6 +368,7 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mam::_SceneULong_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mam::_SceneFloat_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mam::_SceneDouble_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mam::_SceneOther_default_instance_),
 };
 
 const char descriptor_table_protodef_fourteenth_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
@@ -446,29 +473,32 @@ const char descriptor_table_protodef_fourteenth_2eproto[] PROTOBUF_SECTION_VARIA
   "o\030\r \001(\001B\016\262\366\004\n\201\001\215\355\265\240\367\306\260\276\0224\n\024iamd_ge_lt_ze"
   "ro_left\030\016 \001(\001B\026\262\366\004\022q\215\355\265\240\367\306\260>y\264\310v\276\017$\303@\0225\n"
   "\025iamd_ge_lt_zero_right\030\017 \001(\001B\026\262\366\004\022q\364\375\324x\351"
-  "\370\241\300y\215\355\265\240\367\306\260\276:=\n\005xrule\022\035.google.protobuf."
-  "FieldOptions\030\346N \001(\0132\016.mam.FieldRuleb\006pro"
-  "to3"
+  "\370\241\300y\215\355\265\240\367\306\260\276\"\\\n\nSceneOther\022%\n\004rate\030\001 \001(\001"
+  "B\027\262\366\004\023q\215\355\265\240\367\306\260>\201\001\000\000\000\000\000\000\360\?\022\'\n\006server\030\002 \001("
+  "\005B\027\262\366\004\023q\000\000\000\000\000\000\360\?\201\001\000\000\000\000\000\300X@:=\n\005xrule\022\035.go"
+  "ogle.protobuf.FieldOptions\030\346N \001(\0132\016.mam."
+  "FieldRuleb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_fourteenth_2eproto_deps[1] = {
   &::descriptor_table_google_2fprotobuf_2fdescriptor_2eproto,
 };
-static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_fourteenth_2eproto_sccs[8] = {
+static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_fourteenth_2eproto_sccs[9] = {
   &scc_info_FieldRule_fourteenth_2eproto.base,
   &scc_info_SceneDouble_fourteenth_2eproto.base,
   &scc_info_SceneFloat_fourteenth_2eproto.base,
   &scc_info_SceneInt_fourteenth_2eproto.base,
   &scc_info_SceneLong_fourteenth_2eproto.base,
+  &scc_info_SceneOther_fourteenth_2eproto.base,
   &scc_info_SceneString_fourteenth_2eproto.base,
   &scc_info_SceneUInt_fourteenth_2eproto.base,
   &scc_info_SceneULong_fourteenth_2eproto.base,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_fourteenth_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_fourteenth_2eproto = {
-  false, false, descriptor_table_protodef_fourteenth_2eproto, "fourteenth.proto", 4123,
-  &descriptor_table_fourteenth_2eproto_once, descriptor_table_fourteenth_2eproto_sccs, descriptor_table_fourteenth_2eproto_deps, 8, 1,
+  false, false, descriptor_table_protodef_fourteenth_2eproto, "fourteenth.proto", 4217,
+  &descriptor_table_fourteenth_2eproto_once, descriptor_table_fourteenth_2eproto_sccs, descriptor_table_fourteenth_2eproto_deps, 9, 1,
   schemas, file_default_instances, TableStruct_fourteenth_2eproto::offsets,
-  file_level_metadata_fourteenth_2eproto, 8, file_level_enum_descriptors_fourteenth_2eproto, file_level_service_descriptors_fourteenth_2eproto,
+  file_level_metadata_fourteenth_2eproto, 9, file_level_enum_descriptors_fourteenth_2eproto, file_level_service_descriptors_fourteenth_2eproto,
 };
 
 // Force running AddDescriptors() at dynamic initialization time.
@@ -4769,6 +4799,235 @@ void SceneDouble::InternalSwap(SceneDouble* other) {
   return GetMetadataStatic();
 }
 
+
+// ===================================================================
+
+void SceneOther::InitAsDefaultInstance() {
+}
+class SceneOther::_Internal {
+ public:
+};
+
+SceneOther::SceneOther(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+  SharedCtor();
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:mam.SceneOther)
+}
+SceneOther::SceneOther(const SceneOther& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::memcpy(&rate_, &from.rate_,
+    static_cast<size_t>(reinterpret_cast<char*>(&server_) -
+    reinterpret_cast<char*>(&rate_)) + sizeof(server_));
+  // @@protoc_insertion_point(copy_constructor:mam.SceneOther)
+}
+
+void SceneOther::SharedCtor() {
+  ::memset(&rate_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&server_) -
+      reinterpret_cast<char*>(&rate_)) + sizeof(server_));
+}
+
+SceneOther::~SceneOther() {
+  // @@protoc_insertion_point(destructor:mam.SceneOther)
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+void SceneOther::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
+}
+
+void SceneOther::ArenaDtor(void* object) {
+  SceneOther* _this = reinterpret_cast< SceneOther* >(object);
+  (void)_this;
+}
+void SceneOther::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void SceneOther::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const SceneOther& SceneOther::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_SceneOther_fourteenth_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void SceneOther::Clear() {
+// @@protoc_insertion_point(message_clear_start:mam.SceneOther)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  ::memset(&rate_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&server_) -
+      reinterpret_cast<char*>(&rate_)) + sizeof(server_));
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* SceneOther::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // double rate = 1 [(.mam.xrule) = {
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 9)) {
+          rate_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          ptr += sizeof(double);
+        } else goto handle_unusual;
+        continue;
+      // int32 server = 2 [(.mam.xrule) = {
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
+          server_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* SceneOther::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:mam.SceneOther)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // double rate = 1 [(.mam.xrule) = {
+  if (!(this->rate() <= 0 && this->rate() >= 0)) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteDoubleToArray(1, this->_internal_rate(), target);
+  }
+
+  // int32 server = 2 [(.mam.xrule) = {
+  if (this->server() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(2, this->_internal_server(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:mam.SceneOther)
+  return target;
+}
+
+size_t SceneOther::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:mam.SceneOther)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // double rate = 1 [(.mam.xrule) = {
+  if (!(this->rate() <= 0 && this->rate() >= 0)) {
+    total_size += 1 + 8;
+  }
+
+  // int32 server = 2 [(.mam.xrule) = {
+  if (this->server() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_server());
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void SceneOther::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:mam.SceneOther)
+  GOOGLE_DCHECK_NE(&from, this);
+  const SceneOther* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<SceneOther>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mam.SceneOther)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mam.SceneOther)
+    MergeFrom(*source);
+  }
+}
+
+void SceneOther::MergeFrom(const SceneOther& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:mam.SceneOther)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (!(from.rate() <= 0 && from.rate() >= 0)) {
+    _internal_set_rate(from._internal_rate());
+  }
+  if (from.server() != 0) {
+    _internal_set_server(from._internal_server());
+  }
+}
+
+void SceneOther::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:mam.SceneOther)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void SceneOther::CopyFrom(const SceneOther& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:mam.SceneOther)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool SceneOther::IsInitialized() const {
+  return true;
+}
+
+void SceneOther::InternalSwap(SceneOther* other) {
+  using std::swap;
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(SceneOther, server_)
+      + sizeof(SceneOther::server_)
+      - PROTOBUF_FIELD_OFFSET(SceneOther, rate_)>(
+          reinterpret_cast<char*>(&rate_),
+          reinterpret_cast<char*>(&other->rate_));
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata SceneOther::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
 ::PROTOBUF_NAMESPACE_ID::internal::ExtensionIdentifier< ::google::protobuf::FieldOptions,
     ::PROTOBUF_NAMESPACE_ID::internal::MessageTypeTraits< ::mam::FieldRule >, 11, false >
   xrule(kXruleFieldNumber, ::mam::FieldRule::default_instance());
@@ -4799,6 +5058,9 @@ template<> PROTOBUF_NOINLINE ::mam::SceneFloat* Arena::CreateMaybeMessage< ::mam
 }
 template<> PROTOBUF_NOINLINE ::mam::SceneDouble* Arena::CreateMaybeMessage< ::mam::SceneDouble >(Arena* arena) {
   return Arena::CreateMessageInternal< ::mam::SceneDouble >(arena);
+}
+template<> PROTOBUF_NOINLINE ::mam::SceneOther* Arena::CreateMaybeMessage< ::mam::SceneOther >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::mam::SceneOther >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 

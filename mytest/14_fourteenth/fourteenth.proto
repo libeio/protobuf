@@ -155,3 +155,8 @@ message SceneDouble {
     double iamd_ge_lt_zero_left = 14 [ (xrule) = { ge:0.000001, lt:9800.123 } ];
     double iamd_ge_lt_zero_right = 15 [ (xrule) = { ge:-2300.456, lt:-0.000001 } ];
 }
+
+message SceneOther {
+    double rate =  1            [ (xrule) = { ge:0.000001, le:1 } ];
+    int32 server = 2            [ (xrule) = { ge:1, le:99 } ];
+}

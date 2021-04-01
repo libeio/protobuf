@@ -105,8 +105,8 @@ bool PodCompare(const V _val, const google::protobuf::FieldDescriptor * f)
                 return false;
             }
         } else {
-            assert(fabs(_le - _val) >= 0.0);
-            if (fabs(_le - _val) >= 0.0) {
+            assert(_val - _le <= 0.0f);
+            if (_val - _le <= 0.0f) {
                 std::cout << _val << " less equal than " << _le << " ";
             } else {
                 return false;
@@ -418,6 +418,17 @@ int main()
 
         scene.set_iamd_ge_lt_zero_left(0.00008);
         scene.set_iamd_ge_lt_zero_right(-0.000752);
+
+        show(scene);
+    }
+
+    {
+        printf("=====> test about other <=====\n");
+
+        mam::SceneOther scene;
+
+        scene.set_rate(0.99);
+        scene.set_server(10);
 
         show(scene);
     }

@@ -48,7 +48,7 @@ struct TableStruct_fourteenth_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[8]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[9]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -71,6 +71,9 @@ extern SceneIntDefaultTypeInternal _SceneInt_default_instance_;
 class SceneLong;
 class SceneLongDefaultTypeInternal;
 extern SceneLongDefaultTypeInternal _SceneLong_default_instance_;
+class SceneOther;
+class SceneOtherDefaultTypeInternal;
+extern SceneOtherDefaultTypeInternal _SceneOther_default_instance_;
 class SceneString;
 class SceneStringDefaultTypeInternal;
 extern SceneStringDefaultTypeInternal _SceneString_default_instance_;
@@ -87,6 +90,7 @@ template<> ::mam::SceneDouble* Arena::CreateMaybeMessage<::mam::SceneDouble>(Are
 template<> ::mam::SceneFloat* Arena::CreateMaybeMessage<::mam::SceneFloat>(Arena*);
 template<> ::mam::SceneInt* Arena::CreateMaybeMessage<::mam::SceneInt>(Arena*);
 template<> ::mam::SceneLong* Arena::CreateMaybeMessage<::mam::SceneLong>(Arena*);
+template<> ::mam::SceneOther* Arena::CreateMaybeMessage<::mam::SceneOther>(Arena*);
 template<> ::mam::SceneString* Arena::CreateMaybeMessage<::mam::SceneString>(Arena*);
 template<> ::mam::SceneUInt* Arena::CreateMaybeMessage<::mam::SceneUInt>(Arena*);
 template<> ::mam::SceneULong* Arena::CreateMaybeMessage<::mam::SceneULong>(Arena*);
@@ -2482,6 +2486,154 @@ class SceneDouble PROTOBUF_FINAL :
   double iamd_le_zero_;
   double iamd_ge_lt_zero_left_;
   double iamd_ge_lt_zero_right_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_fourteenth_2eproto;
+};
+// -------------------------------------------------------------------
+
+class SceneOther PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mam.SceneOther) */ {
+ public:
+  inline SceneOther() : SceneOther(nullptr) {}
+  virtual ~SceneOther();
+
+  SceneOther(const SceneOther& from);
+  SceneOther(SceneOther&& from) noexcept
+    : SceneOther() {
+    *this = ::std::move(from);
+  }
+
+  inline SceneOther& operator=(const SceneOther& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline SceneOther& operator=(SceneOther&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const SceneOther& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const SceneOther* internal_default_instance() {
+    return reinterpret_cast<const SceneOther*>(
+               &_SceneOther_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    8;
+
+  friend void swap(SceneOther& a, SceneOther& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(SceneOther* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(SceneOther* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline SceneOther* New() const final {
+    return CreateMaybeMessage<SceneOther>(nullptr);
+  }
+
+  SceneOther* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<SceneOther>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const SceneOther& from);
+  void MergeFrom(const SceneOther& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(SceneOther* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "mam.SceneOther";
+  }
+  protected:
+  explicit SceneOther(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_fourteenth_2eproto);
+    return ::descriptor_table_fourteenth_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kRateFieldNumber = 1,
+    kServerFieldNumber = 2,
+  };
+  // double rate = 1 [(.mam.xrule) = {
+  void clear_rate();
+  double rate() const;
+  void set_rate(double value);
+  private:
+  double _internal_rate() const;
+  void _internal_set_rate(double value);
+  public:
+
+  // int32 server = 2 [(.mam.xrule) = {
+  void clear_server();
+  ::PROTOBUF_NAMESPACE_ID::int32 server() const;
+  void set_server(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_server() const;
+  void _internal_set_server(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:mam.SceneOther)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  double rate_;
+  ::PROTOBUF_NAMESPACE_ID::int32 server_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_fourteenth_2eproto;
 };
@@ -5542,9 +5694,55 @@ inline void SceneDouble::set_iamd_ge_lt_zero_right(double value) {
   // @@protoc_insertion_point(field_set:mam.SceneDouble.iamd_ge_lt_zero_right)
 }
 
+// -------------------------------------------------------------------
+
+// SceneOther
+
+// double rate = 1 [(.mam.xrule) = {
+inline void SceneOther::clear_rate() {
+  rate_ = 0;
+}
+inline double SceneOther::_internal_rate() const {
+  return rate_;
+}
+inline double SceneOther::rate() const {
+  // @@protoc_insertion_point(field_get:mam.SceneOther.rate)
+  return _internal_rate();
+}
+inline void SceneOther::_internal_set_rate(double value) {
+  
+  rate_ = value;
+}
+inline void SceneOther::set_rate(double value) {
+  _internal_set_rate(value);
+  // @@protoc_insertion_point(field_set:mam.SceneOther.rate)
+}
+
+// int32 server = 2 [(.mam.xrule) = {
+inline void SceneOther::clear_server() {
+  server_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 SceneOther::_internal_server() const {
+  return server_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 SceneOther::server() const {
+  // @@protoc_insertion_point(field_get:mam.SceneOther.server)
+  return _internal_server();
+}
+inline void SceneOther::_internal_set_server(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  server_ = value;
+}
+inline void SceneOther::set_server(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_server(value);
+  // @@protoc_insertion_point(field_set:mam.SceneOther.server)
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------
