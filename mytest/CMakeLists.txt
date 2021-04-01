@@ -15,6 +15,7 @@ option(BUILD_10_TENTH_TEST  	"Build 10_tenth program"   			ON)
 option(BUILD_11_ELEVENTH_TEST  	"Build 11_eleventh program" 		ON)
 option(BUILD_12_TWELFTH_TEST  	"Build 12_twelfth program"  		ON)
 option(BUILD_13_THIRTEENTH_TEST "Build 13_thirteenth program"  		ON)
+option(BUILD_14_FOURTEENTH_TEST "Build 14_fourteenth program"  		ON)
 
 #
 # if u wanna release, do like this `cmake -DCMAKE_BUILD_TYPE=Release`
@@ -99,6 +100,10 @@ endif()
 
 if(BUILD_13_THIRTEENTH_TEST)
 	add_subdirectory(13_thirteenth)
+endif()
+
+if(BUILD_14_FOURTEENTH_TEST)
+	add_subdirectory(14_fourteenth)
 endif()
 
 #
